@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 PLUGIN_PATHS = ['/home/andrew/build/pelican-plugins']
-PLUGINS = ['assets', ]
+PLUGINS = ['assets', 'static_comments','code_include','interlinks','pdf']
 
 THEME='/home/andrew/build/pelican-themes/bootstrap2-dark'
 
@@ -16,10 +16,21 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
 
+GITHUB_URL = 'https://github.com/kostyll'
+
+STATIC_COMMENTS = True
+STATIC_COMMENTS_DIR = 'comments'
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+
+INTERLINKS = {
+        'wikipedia_en': 'http://en.wikipedia.org/wiki/',
+        'ddg': 'https://duckduckgo.com/?q=',
+        'google': 'https://google.com/search?q='
+    }
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
