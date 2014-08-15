@@ -7,6 +7,10 @@ SITENAME = u'LifeDebuger stuff'
 SITEURL = ''
 
 PATH = 'content'
+PLUGIN_PATHS = ['/home/andrew/build/pelican-plugins']
+PLUGINS = ['assets', ]
+
+THEME='/home/andrew/build/pelican-themes/bootstrap2-dark'
 
 TIMEZONE = 'Europe/Paris'
 
