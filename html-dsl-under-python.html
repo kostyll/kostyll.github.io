@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML dsl under python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Andrew V.">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+        <link href="/theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="/" type="application/atom+xml" rel="alternate" title="LifeDebuger stuff ATOM Feed" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">LifeDebuger stuff </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                          <li class="divider-vertical"></li>
+                  <li class="active">
+                    <a href="/category/python.html">
+						<i class="icon-folder-open icon-large"></i>Python
+					</a>
+                  </li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to HTML dsl under python">
+                                        HTML dsl under python
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2014-08-28T17:00:00+02:00">
+        <i class="icon-calendar"></i>Thu 28 August 2014
+</abbr>
+<span class="label">By</span>
+<a href="/author/andrew-v.html"><i class="icon-user"></i>Andrew V.</a>
+<span class="label">Category</span>
+<a href="/category/python.html"><i class="icon-folder-open"></i>Python</a>.
+
+
+<span class="label">Tags</span>
+	<a href="/tag/python.html"><i class="icon-tag"></i>python</a>
+	<a href="/tag/html.html"><i class="icon-tag"></i>html</a>
+	<a href="/tag/dsl.html"><i class="icon-tag"></i>dsl</a>
+</footer><!-- /.post-info -->                </div>
+                <p>Today, after a long process of seeking for dsl under python I've found one interesting <a class="reference external" href="https://gist.github.com/kstep/3360002">gist</a> on <a class="reference external" href="https://github.com">github</a> where the <a class="reference external" href="https://gist.github.com/kstep/">author</a> wrote a little module which provides fast and short describing html-templates and rendering them.</p>
+<p>I've analized this code and understood that this snippet doesn't  support working in thread and after some having a think I've realized this feature using threading module. Context information is stored in dictionary, where key-value is formed using thread name-attribute. Module threading supports naming threads with same names and a programmer must be carefull using this code, but in most cases threads are automatically named using template "MainThread,Thread-&lt;1&gt; .... Thread-&lt;N&gt;", so at most it mught be usefull for somebody :)</p>
+<div class="highlight"><pre><span class="n">__all__</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="sd">"""</span>
+<span class="sd">Source gist : https://gist.github.com/3360002.git</span>
+<span class="sd">Author      : kstep</span>
+<span class="sd">Contributor : kostyll - https://kostyll.github.io</span>
+<span class="sd">Date        : 2014/08/28</span>
+
+<span class="sd">The main goal is to reach using this module in multi-threaded enveronment.</span>
+<span class="sd">I've mode a small contribution - every context data is storing in a threads dict,</span>
+<span class="sd">which key-field value is the name of the current thread - BE CAREFULL!!!</span>
+<span class="sd">If there are two or more threads with the same name in runtime - you'll have logical</span>
+<span class="sd">errors!</span>
+<span class="sd">"""</span>
+
+<span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">__all__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">module</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">]</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">threading</span>
+
+    <span class="k">def</span> <span class="nf">get_thread_identifier</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">threading</span><span class="o">.</span><span class="n">currentThread</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
+
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">threading</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="k">class</span> <span class="nc">Context</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="s">'  '</span>
+    <span class="n">threads</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">get_thread_identifier</span><span class="p">(),</span><span class="nb">dict</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()][</span><span class="s">'level'</span><span class="p">]</span>
+
+    <span class="nd">@level.setter</span>
+    <span class="k">def</span> <span class="nf">level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">get_thread_identifier</span><span class="p">(),</span><span class="nb">dict</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()][</span><span class="s">'level'</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">threading</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">threading</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">get_thread_identifier</span><span class="p">(),{</span><span class="s">'level'</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()][</span><span class="s">'level'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__lshift__</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">btrace</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">threading</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">get_thread_identifier</span><span class="p">(),{</span><span class="s">'level'</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()][</span><span class="s">'level'</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="c"># def __lshift__(self, data):</span>
+    <span class="c">#     if threading is None:</span>
+    <span class="c">#         print(self.indent * self.level + str(data))</span>
+    <span class="c">#     else:</span>
+    <span class="c">#         print(self.indent * self.threads[get_thread_identifier()]['level'] + str(data))</span>
+    <span class="c">#     return self</span>
+
+
+<span class="k">class</span> <span class="nc">StrContext</span><span class="p">(</span><span class="n">Context</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="s">''</span>
+
+    <span class="k">def</span> <span class="nf">__lshift__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">threading</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">get_thread_identifier</span><span class="p">(),{</span><span class="s">'level'</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'data'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()][</span><span class="s">'data'</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()][</span><span class="s">'level'</span><span class="p">]</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">threading</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">threads</span><span class="p">[</span><span class="n">get_thread_identifier</span><span class="p">()][</span><span class="s">'data'</span><span class="p">]</span>
+
+
+<span class="n">context</span> <span class="o">=</span> <span class="n">StrContext</span><span class="p">()</span>
+<span class="n">__all__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'context'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">build_attrs</span><span class="p">(</span><span class="n">attrs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">' '</span> <span class="o">+</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="s">'</span><span class="si">%s</span><span class="s">="</span><span class="si">%s</span><span class="s">"'</span> <span class="o">%</span> <span class="p">(</span>
+                <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"_"</span><span class="p">,</span> <span class="s">"-"</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'-'</span><span class="p">),</span>
+                <span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s">'__iter__'</span><span class="p">)</span> <span class="k">else</span> <span class="n">v</span><span class="p">)(</span>
+                    <span class="p">(</span><span class="n">value</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">'__call__'</span><span class="p">)</span> <span class="k">else</span> <span class="n">value</span><span class="p">)</span>
+                <span class="p">))</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">attrs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+            <span class="p">)</span> <span class="k">if</span> <span class="n">attrs</span> <span class="k">else</span> <span class="s">''</span>
+
+<span class="nd">@export</span>
+<span class="k">def</span> <span class="nf">css</span><span class="p">(</span><span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s">;"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'_'</span><span class="p">,</span> <span class="s">'-'</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">attrs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">())</span>
+
+
+<span class="k">class</span> <span class="nc">TAG</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">class</span> <span class="nc">__metaclass__</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">cls</span><span class="p">()</span><span class="o">.</span><span class="n">__enter__</span><span class="p">()</span>
+
+        <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">btrace</span><span class="p">):</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">level</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">'&lt;/</span><span class="si">%s</span><span class="s">&gt;'</span> <span class="o">%</span> <span class="n">cls</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">cls</span><span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'_'</span><span class="p">,</span> <span class="s">'-'</span><span class="p">)]</span>
+
+        <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="n">cls</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">'&lt;</span><span class="si">%s%s</span><span class="s">&gt;'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">build_attrs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">))</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">btrace</span><span class="p">):</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">level</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">'&lt;/</span><span class="si">%s</span><span class="s">&gt;'</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_content</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">_content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">'&lt;</span><span class="si">%s%s</span><span class="s">&gt;</span><span class="si">%s</span><span class="s">&lt;/</span><span class="si">%s</span><span class="s">&gt;'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">build_attrs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="p">),</span> <span class="n">_content</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_content</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">(</span><span class="n">_content</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'_'</span><span class="p">,</span> <span class="s">'-'</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'class'</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+
+<span class="k">class</span> <span class="nc">EMPTYTAG</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="p">:</span>
+            <span class="n">_attrs</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">_attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_attrs</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">attrs</span>
+
+        <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">'&lt;</span><span class="si">%s%s</span><span class="s"> /&gt;'</span> <span class="o">%</span> <span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">build_attrs</span><span class="p">(</span><span class="n">_attrs</span><span class="p">))</span>
+
+
+<span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">COMMENT</span><span class="p">(</span><span class="n">TAG</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">'&lt;!-- '</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">' --&gt;'</span>
+
+
+<span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">HTML</span><span class="p">(</span><span class="n">TAG</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">'html'</span>
+    <span class="n">doctype</span> <span class="o">=</span> <span class="s">''</span>
+
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">&lt;&lt;</span> <span class="s">'''&lt;!DOCTYPE </span><span class="si">%s</span><span class="s">&gt;'''</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doctype</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">HTML</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__enter__</span><span class="p">()</span>
+
+
+<span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">HTML5</span><span class="p">(</span><span class="n">HTML</span><span class="p">):</span>
+    <span class="n">doctype</span> <span class="o">=</span> <span class="s">'HTML'</span>
+
+
+<span class="n">simple_tags</span> <span class="o">=</span> <span class="p">(</span><span class="s">'head body title '</span> <span class="o">+</span> <span class="c"># Main elements</span>
+            <span class="s">'div p blockquote '</span> <span class="o">+</span> <span class="c"># Blocks</span>
+            <span class="s">'h1 h2 h3 h4 h5 h6 '</span> <span class="o">+</span> <span class="c"># Headers</span>
+            <span class="s">'u b i s a em strong span font '</span> <span class="o">+</span> <span class="c"># Inline markup</span>
+            <span class="s">'del ins '</span> <span class="o">+</span> <span class="c"># Annotation</span>
+            <span class="s">'ul ol li dd dt dl '</span> <span class="o">+</span> <span class="c"># Lists</span>
+            <span class="s">'article section nav aside '</span> <span class="o">+</span> <span class="c"># HTML5</span>
+            <span class="s">'audio video object embed param '</span> <span class="o">+</span> <span class="c"># Media</span>
+            <span class="s">'fieldset legend button textarea label select option '</span> <span class="o">+</span> <span class="c"># Forms</span>
+            <span class="s">'table thead tbody tr th td caption '</span> <span class="o">+</span> <span class="c"># Tables</span>
+            <span class="s">''</span>
+            <span class="p">)</span>
+<span class="n">empty_tags</span> <span class="o">=</span> <span class="s">'meta link br hr input'</span>
+
+<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">simple_tags</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">__all__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">TAG</span><span class="p">,),</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="n">tag</span><span class="p">}))</span>
+
+<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">empty_tags</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">__all__</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">EMPTYTAG</span><span class="p">,),</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span> <span class="n">tag</span><span class="p">}))</span>
+
+<span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">SCRIPT</span><span class="p">(</span><span class="n">TAG</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">'script'</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s">'type'</span><span class="p">:</span> <span class="s">'text/javascript'</span><span class="p">}</span>
+
+
+<span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">CSS</span><span class="p">(</span><span class="n">LINK</span><span class="p">):</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s">'type'</span><span class="p">:</span> <span class="s">'text/css'</span><span class="p">,</span> <span class="s">'rel'</span><span class="p">:</span> <span class="s">'stylesheet'</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">href</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CSS</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">href</span><span class="p">)</span>
+
+
+<span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">JS</span><span class="p">(</span><span class="n">SCRIPT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">JS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
+
+
+<span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">FORM</span><span class="p">(</span><span class="n">TAG</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">'form'</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s">'method'</span><span class="p">:</span> <span class="s">'POST'</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">''</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FORM</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">)</span>
+</pre></div>
+<p>There is a few examples of using it:</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">Queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">html</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">layout</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">styles</span><span class="o">=</span><span class="p">[],</span> <span class="n">scripts</span><span class="o">=</span><span class="p">[],</span> <span class="n">meta</span><span class="o">=</span><span class="p">{},</span> <span class="n">http</span><span class="o">=</span><span class="p">{},</span> <span class="n">prop</span><span class="o">=</span><span class="p">{}):</span>
+        <span class="k">with</span> <span class="n">HEAD</span><span class="p">:</span>
+            <span class="n">TITLE</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">style</span> <span class="ow">in</span> <span class="n">styles</span><span class="p">:</span>
+                <span class="n">CSS</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">script</span> <span class="ow">in</span> <span class="n">scripts</span><span class="p">:</span>
+                <span class="n">JS</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">:</span>
+                <span class="n">META</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">http</span><span class="p">:</span>
+                <span class="n">META</span><span class="p">(</span><span class="n">http_equiv</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">prop</span><span class="p">:</span>
+                <span class="n">META</span><span class="p">(</span><span class="nb">property</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">field</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">'text'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">DIV</span><span class="o">.</span><span class="n">control_group</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">LABEL</span><span class="o">.</span><span class="n">control_label</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">for_</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="n">DIV</span><span class="o">.</span><span class="n">controls</span><span class="p">:</span>
+                <span class="n">INPUT</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">help</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">P</span><span class="o">.</span><span class="n">help_block</span><span class="p">(</span><span class="n">help</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">HTML5</span><span class="p">:</span>
+        <span class="n">head</span><span class="p">(</span><span class="s">'Page title'</span><span class="p">,</span>
+                <span class="n">styles</span><span class="o">=</span><span class="p">[</span><span class="s">'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css'</span><span class="p">],</span>
+                <span class="n">scripts</span><span class="o">=</span><span class="p">[</span><span class="s">'http://code.jquery.com/jquery.min.js'</span><span class="p">,</span>
+                    <span class="s">'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min.js'</span><span class="p">])</span>
+
+        <span class="k">with</span> <span class="n">BODY</span><span class="o">.</span><span class="n">main</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">DIV</span><span class="o">.</span><span class="n">content</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">'content'</span><span class="p">):</span>
+                <span class="n">H1</span><span class="p">(</span><span class="s">'Hello, world!'</span><span class="p">)</span>
+
+                <span class="k">with</span> <span class="n">FORM</span><span class="p">(</span><span class="s">'/my-page'</span><span class="p">)</span><span class="o">.</span><span class="n">well</span><span class="o">.</span><span class="n">form_horizontal</span><span class="p">,</span> <span class="n">FIELDSET</span><span class="p">:</span>
+                    <span class="n">field</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">'input01'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Text input'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">'This is a help text.'</span><span class="p">)</span>
+                    <span class="n">field</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">'input02'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Checkbox'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">'checkbox'</span><span class="p">)</span>
+
+                    <span class="k">with</span> <span class="n">DIV</span><span class="o">.</span><span class="n">control_group</span><span class="p">:</span>
+                        <span class="n">LABEL</span><span class="o">.</span><span class="n">control_label</span><span class="p">(</span><span class="s">'Select list'</span><span class="p">,</span> <span class="n">for_</span><span class="o">=</span><span class="s">'input03'</span><span class="p">)</span>
+
+                        <span class="k">with</span> <span class="n">DIV</span><span class="o">.</span><span class="n">controls</span><span class="p">,</span> <span class="n">SELECT</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">'input03'</span><span class="p">):</span>
+                            <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+                                <span class="n">OPTION</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
+
+                    <span class="k">with</span> <span class="n">DIV</span><span class="o">.</span><span class="n">form_actions</span><span class="p">:</span>
+                        <span class="n">BUTTON</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">'submit'</span><span class="p">)</span><span class="o">.</span><span class="n">btn</span><span class="o">.</span><span class="n">btn_primary</span><span class="p">(</span><span class="s">'Save changes'</span><span class="p">)</span>
+                        <span class="n">BUTTON</span><span class="o">.</span><span class="n">btn</span><span class="p">(</span><span class="s">'Cancel'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">layout1</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">HTML5</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">HEAD</span><span class="p">:</span>
+            <span class="n">TITLE</span><span class="p">(</span><span class="s">"title 1"</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">BODY</span><span class="o">.</span><span class="n">main</span><span class="p">:</span>
+            <span class="n">H1</span><span class="p">(</span><span class="s">"HEllo !!! layout1"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">layout2</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">HTML</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BODY</span><span class="o">.</span><span class="n">main</span><span class="p">:</span>
+            <span class="n">H2</span><span class="p">(</span><span class="s">"Hello !!! layOUT 2 !!!"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">thread_worker</span><span class="p">(</span><span class="n">layout_renderer</span><span class="p">):</span>
+
+    <span class="n">layout_renderer</span> <span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="c"># print (result)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">layout</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="n">thread1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">thread_worker</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">layout1</span><span class="p">,))</span>
+    <span class="n">thread2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">thread_worker</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">layout2</span><span class="p">,))</span>
+
+    <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span><span class="n">thread1</span><span class="p">,</span><span class="n">thread2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">results</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s">"****************"</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s">'data'</span><span class="p">])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+                </div><!-- /.entry-content -->
+        </article>
+</section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://getpelican.com/"><i class="icon-external-link"></i>Pelican</a></li>
+    <li><a href="http://python.org/"><i class="icon-external-link"></i>Python.org</a></li>
+    <li><a href="http://jinja.pocoo.org/"><i class="icon-external-link"></i>Jinja2</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="https://github.com/kostyll"><i class="icon-GH-sign icon-large"></i>GH</a></li>
+    <li><a href="https://www.facebook.com/andrew.vasyltsiv"><i class="icon-FB-sign icon-large"></i>FB</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/python.html">
+    <i class="icon-folder-open icon-large"></i>Python
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-4">
+    <a href="/tag/html.html">
+        <i class="icon-tag icon-large"></i>html
+    </a>
+</li>
+<li class="tag-4">
+    <a href="/tag/dsl.html">
+        <i class="icon-tag icon-large"></i>dsl
+    </a>
+</li>
+<li class="tag-1">
+    <a href="/tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

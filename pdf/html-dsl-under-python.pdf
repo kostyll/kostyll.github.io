@@ -1,0 +1,184 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<< /F1 2 0 R /F2 3 0 R >>
+endobj
+2 0 obj
+<< /BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font >>
+endobj
+3 0 obj
+<< /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font >>
+endobj
+4 0 obj
+<< /A << /S /URI /Type /Action /URI (https://gist.github.com/kstep/3360002) >> /Border [ 0 0 0 ] /Rect [ 62.69291 634.7236 87.29761 646.7236 ] /Subtype /Link /Type /Annot >>
+endobj
+5 0 obj
+<< /A << /S /URI /Type /Action /URI (https://github.com) >> /Border [ 0 0 0 ] /Rect [ 106.5743 634.7236 145.195 646.7236 ] /Subtype /Link /Type /Annot >>
+endobj
+6 0 obj
+<< /A << /S /URI /Type /Action /URI (https://gist.github.com/kstep/) >> /Border [ 0 0 0 ] /Rect [ 206.4164 634.7236 246.3691 646.7236 ] /Subtype /Link /Type /Annot >>
+endobj
+7 0 obj
+<< /Annots [ 4 0 R 5 0 R 6 0 R ] /Contents 11 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 10 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+  /Trans <<  >> /Type /Page >>
+endobj
+8 0 obj
+<< /Outlines 12 0 R /PageLabels 13 0 R /PageMode /UseNone /Pages 10 0 R /Type /Catalog >>
+endobj
+9 0 obj
+<< /Author (Andrew V.) /CreationDate (D:20140828183005-02'00') /Creator (\(unspecified\)) /Keywords () /Producer (ReportLab PDF Library - www.reportlab.com) /Subject (\(unspecified\)) 
+  /Title (HTML dsl under python) >>
+endobj
+10 0 obj
+<< /Count 1 /Kids [ 7 0 R ] /Type /Pages >>
+endobj
+11 0 obj
+<< /Length 2816 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 736.2236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.8 Tm /F2 24 Tf 28.8 TL 100.9409 0 Td (HTML dsl under python) Tj T* -100.9409 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 711.2236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F2 12 Tf 12 TL 44.37137 0 Td (tags:) Tj T* -44.37137 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 0 Tm 12 TL /F1 12 Tf 0 0 0 rg (python, html, dsl) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 696.2236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F2 12 Tf 12 TL 43.03937 0 Td (Date:) Tj T* -43.03937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F1 12 Tf 12 TL (2014-08-28 17:00) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 681.2236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F2 12 Tf 12 TL 19.02737 0 Td (category:) Tj T* -19.02737 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F1 12 Tf 12 TL (Python) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 666.2236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F2 12 Tf 12 TL 29.71937 0 Td (Author:) Tj T* -29.71937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F1 12 Tf 12 TL (Andrew V.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 624.2236 cm
+q
+BT 1 0 0 1 0 24 Tm 1.430126 Tw 12 TL /F1 12 Tf 0 0 0 rg (Today, after a long process of seeking for dsl under python I've found one interesting) Tj T* 0 Tw 2.596697 Tw 0 0 .501961 rg (gist ) Tj 0 0 0 rg (on ) Tj 0 0 .501961 rg (github ) Tj 0 0 0 rg (where the ) Tj 0 0 .501961 rg (author ) Tj 0 0 0 rg (wrote a little module which provides fast and short) Tj T* 0 Tw (describing html-templates and rendering them.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 534.2236 cm
+q
+BT 1 0 0 1 0 72 Tm 2.97848 Tw 12 TL /F1 12 Tf 0 0 0 rg (I've analized this code and understood that this snippet doesn't support working in) Tj T* 0 Tw 1.07952 Tw (thread and after some having a think I've realized this feature using threading module.) Tj T* 0 Tw 3.065979 Tw (Context information is stored in dictionary, where key-value is formed using thread) Tj T* 0 Tw 2.768976 Tw (name-attribute. Module threading supports naming threads with same names and a) Tj T* 0 Tw 5.75548 Tw (programmer must be carefull using this code, but in most cases threads are) Tj T* 0 Tw 2.39622 Tw (automatically named using template "MainThread,Thread-) Tj (<) Tj (1) Tj (> .... Thread-) Tj (<) Tj (N) Tj (>) Tj (", so at) Tj T* 0 Tw (most it mught be usefull for somebody :\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 516.2236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 0 Tm /F1 12 Tf 12 TL (There is a few examples of using it:) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+12 0 obj
+<< /Count 0 /Type /Outlines >>
+endobj
+13 0 obj
+<< /Nums [ 0 14 0 R ] >>
+endobj
+14 0 obj
+<< /S /D /St 1 >>
+endobj
+xref
+0 15
+0000000000 65535 f
+0000000075 00000 n
+0000000119 00000 n
+0000000229 00000 n
+0000000344 00000 n
+0000000536 00000 n
+0000000708 00000 n
+0000000893 00000 n
+0000001132 00000 n
+0000001240 00000 n
+0000001480 00000 n
+0000001543 00000 n
+0000004416 00000 n
+0000004466 00000 n
+0000004510 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com)
+ [(\3429\376y\377\036\037\332"s\210\000\371\000\260\224) (\3429\376y\377\036\037\332"s\210\000\371\000\260\224)]
+ /Info 9 0 R /Root 8 0 R /Size 15 >>
+startxref
+4547
+%%EOF
