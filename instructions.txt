@@ -1,0 +1,186 @@
+How to setup Github User Page with Pelican
+
+Posted: September 28, 2013 at 11:45 am
+
+Github Pages has been introduced for a while and it’s a good tool for static websites or just as blogs. Here, I will show how to set up a working static blog on github pages using Pelican. Pelican is a static site generator, written in Python. It strikes as a very interesting method as you can write your content purely in your favourite editor (in Markdown Flavour) and commit your post or style changes using Git. Each and every revision of your changes will be saved in this revision control system. If you are not into GUI Editor system, you might just find yourself your favourite tool.
+
+
+
+This is a guide that just works without needing to clone anything.
+
+
+
+Create a github page
+
+
+
+Firstly, create a github page by creating a github repository and name it USERNAME.github.io
+
+USERNAME refers to your github account username, it makes sense as to make your github user page unique. For example, I have a username called buttermilch and I create a repository for this exercise and  named it buttermilch.github.io
+
+
+
+screenshot
+
+
+Create your working environment
+
+
+
+Now, navigate to where you want your folder to be and clone the repository you just created. Here, I will clone the buttermilch repository. You can find your clone destination by going to the main page of your newly created repository. At right down of the page you will find a HTTP clone URL. Copy that and clone it to your desired folder.
+
+
+
+$ git clone https://github.com/buttermilch/buttermilch.github.io.git
+
+Next I will use virtualenv. Virtualenv is a great tool to create an isolate environment for your Python application. I prefer to have an isolated environment for each and everyone of my python project, you can proceed without using it, but I strongly suggest you start using it. If you don’t have it, you can get it as follow:
+
+
+
+$ pip install virtualenv
+
+Isolate this folder or application by creating an extra folder called ENV to store the virtualenv files.
+
+
+
+$ cd buttermilch.github.io.git
+$ mkdir ENV
+$ virtualenv ENV
+$ source ENV/bin/activate
+
+This ENV folder is only interesting for us in our local environment, it does not need to be committed to the Github server. You will need to ignore this whole folder from your Git. You can do this by editing .gitignore file to exclude ENV. This file is at your highest hierachy of your application structure.
+
+
+
+(ENV)$ vi .gitignore
+
+Just type ENV/ on the first or last row of the file then commit it.
+
+
+
+(ENV)$ git add .gitignore
+(ENV)$ git commit -m "added ENV folder to ignore list"
+
+Install and Setup Pelican
+
+
+
+Github User page will display everything on master branch. So, I prefer to work in a new branch with my files and push only the output to master branch. Let’s create a new branch to work on, i.e. source
+
+
+
+(ENV)$ git checkout -b source
+
+Let’s install Pelican now. Base on the documentation, you can install pelican using “pip install pelican” or “easy_install pelican”. Try these two methods first, but if it does not work, as is happening to me, just install it directly from its github project page using the command below:
+
+
+
+(ENV)$ pip install -e git://github.com/getpelican/pelican#egg=pelican
+
+Next, get the markdown as well, it is useful. I think you can choose between Markdown or reST, but I use Markdown.
+
+
+
+(ENV)$ pip install Markdown
+
+We now have Pelican, we can now kickstart our site by using the pelican-quickstart. This will launch an assisted installation process, if you are not seeing anything or it’s not working. There should be some problem with your pelican installation. Head back on top and see where you did it wrongly.
+
+
+
+(ENV)$ pelican-quickstart
+
+It will ask you many questions to set up your site. I use the following settings, mostly I just use the default, below are the answers I provided to launch this test application. You can refer to mine if you are stuck anywhere. The questions are largely straight-forward.
+
+
+
+> Where do you want to create your new web site? [.]
+> What will be the title of this web site? Buttermilch
+> Who will be the author of this web site? Tony Stark
+> What will be the default language of this web site? [en]
+> Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) n
+> Do you want to enable article pagination? (Y/n)
+> How many articles per page do you want? [10]
+> Do you want to generate a Fabfile/Makefile ... and publishing? (Y/n)
+> Do you want an auto-reload & simpleHTTP ... and site development? (Y/n)
+> Do you want to upload your website using FTP? (y/N)
+> Do you want to upload your website using SSH? (y/N)
+> Do you want to upload your website using Dropbox? (y/N)
+> Do you want to upload your website using S3? (y/N)
+> Do you want to upload your website using Rackspace Cloud Files? (y/N)
+
+Create a Markdown Post
+
+
+
+Your path will be populated with many files now. What you will need is just to create a Post, so that you will see your post later. Navigate to content and create a test.md file. The .md is the file type extension for a markdown file. The Markdown syntax can be found here. Markdown syntax is suppose to enlighten the work of writing an article and let the writer to focus mainly on the content, that being said, the syntax for formatting used in Markdown is really simple. I’ll provide a sample markdown post for you to get on to speed.
+
+
+
+(ENV)$ vi content/test.md
+
+Populate your test.md as follow:
+
+
+
+Title: Buttermilch is awesome
+Date: 2013-08-22 16:08
+Category: Python
+Tags: python
+Author: Tony Stark
+Summary: Buttermilch is super cool.
+
+Buttermilch is super cool.
+
+Test your localhost site
+
+
+
+So, we have a markdown post, we have installed Pelican and its friends correctly. Now we need to process or interpret the markdown file that we had just created. This can be done by simply typing the two commands below. First “make html” will processed the markdown file in your CONTENT folder. The processed files will be generated in OUTPUT folder. When there’s no warnings nor error (good sign), we proceed with the next command “make serve”, this launches your application from your localhost.
+
+
+
+(ENV)$ make html
+(ENV)$ make serve
+
+Try launching your localhost:8000 from your web browser and your site should be there. I got my buttermilch. That’s great, everything is working fine. Give yourself a big clap.
+
+
+
+screenshot
+
+
+
+Since everything is fine, I have my desired output, I want to save what I have at the moment. I do this by using Git to commit all my changes locally. This is a good practice to have revision control on your hard work. Do that by using the two commands below. Firstly, add your files to staging and secondly commit your staged files.
+
+
+
+(ENV)$ git add .
+(ENV)$ git commit -m "initial commit"
+
+Launch your site to github
+
+
+
+Remember that we are in our ‘source’ branch. We need to copy the necessary files to ‘master’ branch to get it on our github user page. You can directly push the output folder to master folder, but I prefer to use a script to help me do my work. I found out that I can use a script called ghp-import. This script export the content of the output folder to the ‘gh-pages’ branch. So, I created a ‘gh-pages’ branch, run the script, and then merge the content of the gh-pages to my ‘master’ branch. These steps are shown below in the commands.
+
+
+
+if you don’t have ghp-import, you can get it simply by:
+
+
+
+(ENV)$ pip install ghp-import
+
+Create gh-pages branch and run the ghp-import script.
+
+
+
+(ENV)$ git branch gh-pages
+(ENV)$ ghp-import output
+(ENV)$ git checkout master
+(ENV)$ git merge gh-pages
+(ENV)$ git push --all
+
+Launch your github user page and wait patiently, your site should be live soon. I pushed all the branches to Git repository, but you can just push only master branch and source branch. We never need the gh-pages branch anyway.
+
+In this post, the username I’m using is buttermilch, so I’ll be expecting to see my static blog page on buttermilch.github.io
