@@ -12,5 +12,5 @@ So the main Idea of the algorithm is to build matrix of mutual sentences interse
 
 Than we summarize intersactions for every sentence and with this value choise what sentence should be used in summary.
 
-This algorithm I've implemented in javascript, so the source is [here](https://github.com/kostyll/summary.js)
+This algorithm I've implemented in javascript, so the source is [here](http://kostyll.github.io/summary.js/)
 
