@@ -1,0 +1,12 @@
+[submodule "plugins/third_party/pelican-plugins"]
+	path = plugins/third_party/pelican-plugins
+	url = git@github.com:getpelican/pelican-plugins.git
+[submodule "themes/third_party/pelican-themes"]
+	path = themes/third_party/pelican-themes
+	url = git@github.com:getpelican/pelican-themes.git
+[submodule "plugins/third_party/pelican-social"]
+	path = plugins/third_party/pelican-social
+	url = git@github.com:noirbizarre/pelican-social.git
+[submodule "themes/third_party/pelican-fresh"]
+	path = themes/third_party/pelican-fresh
+	url = git@github.com:jsliang/pelican-fresh.git

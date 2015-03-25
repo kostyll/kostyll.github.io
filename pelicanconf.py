@@ -8,10 +8,11 @@ SITENAME = u'LifeDebuger stuff'
 SITEURL = '/'
 
 PATH = 'content'
-PLUGIN_PATHS = ['/home/andrew/build/pelican-plugins']
+PLUGIN_PATHS = ['plugins/third_party/pelican-plugins/']
 PLUGINS = ['assets', 'static_comments','code_include','interlinks','pdf']
 
-THEME='/home/andrew/build/pelican-themes/pelican-bootstrap3'
+#THEME='themes/third_party/pelican-themes/pelican-bootstrap3'
+THEME='themes/third_party/pelican-fresh'
 
 TIMEZONE = 'Europe/Paris'
 

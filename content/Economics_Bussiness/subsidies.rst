@@ -24,7 +24,7 @@
 
 І на закуску, новий бізнес-інкубатор `Moja Firma <http://mojafirma.org/kak-eto-rabotaet/>`_, який автоматизує процес створення вашої фірми, та бере на себе обов’язки бухгалтера, підготовлює необхідні юридичні документи та ін. `детальніше <http://mojafirma.org/kak-eto-rabotaet/>`_.
 
-  .. image:: /images/Economics_Bussiness/infografika_bissness_incubator.png
+  .. image:: images/Economics_Bussiness/infografika_bissness_incubator.png
     :height: 300px
     :scale: 100 %
     :alt: alternate text
