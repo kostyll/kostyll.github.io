@@ -9,7 +9,7 @@ SITEURL = '/'
 
 PATH = 'content'
 PLUGIN_PATHS = ['plugins/third_party/pelican-plugins/']
-PLUGINS = ['assets', 'static_comments','code_include','interlinks','pdf']
+PLUGINS = ['assets', 'static_comments','code_include','interlinks','pdf', 'sitemap','disqus_static']
 
 #THEME='themes/third_party/pelican-themes/pelican-bootstrap3'
 THEME='themes/third_party/pelican-fresh'
@@ -64,3 +64,21 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+
+SITEMAP = {
+'format': 'xml',
+'priorities': {
+'articles': 0.5,
+'indexes': 0.5,
+'pages': 0.5
+},
+'changefreqs': {
+'articles': 'monthly',
+'indexes': 'daily',
+'pages': 'monthly'
+}
+}
+
+DISQUS_SITENAME = u'YOUR_SITENAME'
+DISQUS_SECRET_KEY = u'YOUR_SECRET_KEY'
+DISQUS_PUBLIC_KEY = u'YOUR_PUBLIC_KEY'
