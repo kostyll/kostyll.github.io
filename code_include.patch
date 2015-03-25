@@ -1,0 +1,19 @@
+diff --git a/code_include/code_include.py b/code_include/code_include.py
+index b87c8dd..4011132 100644
+--- a/code_include/code_include.py
++++ b/code_include/code_include.py
+@@ -29,9 +29,11 @@ class CodeInclude(Directive):
+         source_dir = os.path.dirname(os.path.abspath(source))
+ 
+         path = directives.path(self.arguments[0])
+-        path = os.path.normpath(os.path.join(source_dir, path))
+-        path = utils.relative_path(None, path)
+-        path = nodes.reprunicode(path)
++        # path = os.path.normpath(os.path.join(source_dir, path))
++        # path = utils.relative_path(None, path)
++        # path = nodes.reprunicode(path)
++        path = os.path.join(source_dir,path)
++        print path
+ 
+         encoding = self.options.get(
+             'encoding', self.state.document.settings.input_encoding)

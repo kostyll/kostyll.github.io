@@ -1,221 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>python - LifeDebuger stuff</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>LifeDebuger stuff - python</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Andrew V.">
+    
 
-    <!-- Le styles -->
-    <link rel="stylesheet" href="/theme/css/bootstrap.dark.css" type="text/css" />
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-      .tag-1 {
-        font-size: 13pt;
-      }
-      .tag-2 {
-        font-size: 10pt;
-      }
-      .tag-2 {
-        font-size: 8pt;
-      }
-      .tag-4 {
-        font-size: 6pt;
-     }
-    </style>
-    <link href="/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
-        <link href="/theme/css/font-awesome.css" rel="stylesheet">
+    <!-- Open Graph tags -->
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="LifeDebuger stuff"/>
+            <meta property="og:url" content=""/>
+            <meta property="og:description" content="LifeDebuger stuff"/>
 
-    <link href="/theme/css/pygments.css" rel="stylesheet">
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/theme/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+        <link href="/feeds/all.rss.xml" type="application/atom+xml" rel="alternate"
+              title="LifeDebuger stuff RSS Feed"/>
 
-    <link href="/" type="application/atom+xml" rel="alternate" title="LifeDebuger stuff ATOM Feed" />
+</head>
+<body>
 
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/index.html">LifeDebuger stuff </a>
-          <div class="nav-collapse">
-            <ul class="nav">
-                          <li class="divider-vertical"></li>
-                  <li >
-                    <a href="/category/js.html">
-						<i class="icon-folder-open icon-large"></i>JS
-					</a>
-                  </li>
-                  <li >
-                    <a href="/category/python.html">
-						<i class="icon-folder-open icon-large"></i>Python
-					</a>
-                  </li>
-
-                          <ul class="nav pull-right">
-                                <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
-                          </ul>
-
-            </ul>
-            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
-          </div><!--/.nav-collapse -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+LifeDebuger stuff            </a>
         </div>
-      </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/pages/about.html">
+                             ABOUT
+                          </a></li>
+                        <li >
+                            <a href="/category/ekonomika.html">Економіка</a>
+                        </li>
+                        <li >
+                            <a href="/category/js.html">Js</a>
+                        </li>
+                        <li >
+                            <a href="/category/python.html">Python</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+</div> <!-- /.navbar -->
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="span9" id="content">
-        <div class="article">
-                <h1><a href="/html-dsl-under-python.html">HTML dsl under python</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2014-08-28T17:00:00+02:00">
-        <i class="icon-calendar"></i>Thu 28 August 2014
-</abbr>
-<span class="label">By</span>
-<a href="/author/andrew-v.html"><i class="icon-user"></i>Andrew V.</a>
-<span class="label">Category</span>
-<a href="/category/python.html"><i class="icon-folder-open"></i>Python</a>.
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
 
-
-<span class="label">Tags</span>
-	<a href="/tag/python.html"><i class="icon-tag"></i>python</a>
-	<a href="/tag/html.html"><i class="icon-tag"></i>html</a>
-	<a href="/tag/dsl.html"><i class="icon-tag"></i>dsl</a>
-</footer><!-- /.post-info --></div>
+            <article>
+                <h2><a href="/html-dsl-under-python.html">HTML dsl under python</a></h2>
                 <div class="summary"><p>Today, after a long process of seeking for dsl under python I've found one interesting <a class="reference external" href="https://gist.github.com/kstep/3360002">gist</a> on <a class="reference external" href="https://github.com">github</a> where the <a class="reference external" href="https://gist.github.com/kstep/">author</a> wrote a little module which provides fast and short describing html-templates and rendering them.</p>
 <p>I've analized this code and understood that this snippet doesn't  support working ...</p>
-                        <a class="btn primary xsmall" href="/html-dsl-under-python.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="/html-dsl-under-python.html">more ...</a>
                 </div>
-        </div>
-        <hr />
-        <div class="article">
-                <h1><a href="/this-is-the-first-post.html">This is the first post</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2014-08-14T16:08:00+02:00">
-        <i class="icon-calendar"></i>Thu 14 August 2014
-</abbr>
-<span class="label">By</span>
-<a href="/author/andrew-v.html"><i class="icon-user"></i>Andrew V.</a>
-<span class="label">Category</span>
-<a href="/category/python.html"><i class="icon-folder-open"></i>Python</a>.
-
-
-<span class="label">Tags</span>
-	<a href="/tag/python.html"><i class="icon-tag"></i>python</a>
-</footer><!-- /.post-info --></div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/this-is-the-first-post.html">This is the first post</a></h2>
                 <div class="summary"><p>Python is cool! :)</p>
-                        <a class="btn primary xsmall" href="/this-is-the-first-post.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="/this-is-the-first-post.html">more ...</a>
                 </div>
+            </article>
+            <hr/>
+
         </div>
-        <hr />
+        <div class="col-sm-3 well well-sm" id="sidebar">
 
-        </div><!--/span-->
-
-                <div class="span3 well sidebar-nav" id="sidebar">
-<ul class="nav nav-list">
-<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
-    <li><a href="http://getpelican.com/"><i class="icon-external-link"></i>Pelican</a></li>
-    <li><a href="http://python.org/"><i class="icon-external-link"></i>Python.org</a></li>
-    <li><a href="http://jinja.pocoo.org/"><i class="icon-external-link"></i>Jinja2</a></li>
-<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
-<li><a href="/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
-    <li><a href="https://github.com/kostyll"><i class="icon-GH-sign icon-large"></i>GH</a></li>
-    <li><a href="https://www.facebook.com/andrew.vasyltsiv"><i class="icon-FB-sign icon-large"></i>FB</a></li>
-
-<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
-<li>
-<a href="/category/js.html">
-    <i class="icon-folder-open icon-large"></i>JS
-</a>
-</li>
-<li>
-<a href="/category/python.html">
-    <i class="icon-folder-open icon-large"></i>Python
-</a>
-</li>
-
-<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
-<li class="tag-4">
-    <a href="/tag/content-summary.html">
-        <i class="icon-tag icon-large"></i>Content-summary
-    </a>
-</li>
-<li class="tag-4">
-    <a href="/tag/html.html">
-        <i class="icon-tag icon-large"></i>html
-    </a>
-</li>
-<li class="tag-4">
-    <a href="/tag/javascript.html">
-        <i class="icon-tag icon-large"></i>JavaScript
-    </a>
-</li>
-<li class="tag-4">
-    <a href="/tag/js.html">
-        <i class="icon-tag icon-large"></i>JS
-    </a>
-</li>
-<li class="tag-4">
-    <a href="/tag/dsl.html">
-        <i class="icon-tag icon-large"></i>dsl
-    </a>
-</li>
-<li class="tag-1">
-    <a href="/tag/python.html">
-        <i class="icon-tag icon-large"></i>python
-    </a>
-</li>
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="https://github.com/kostyll"><i
+                            class="fa fa-gh-square fa-lg"></i> GH
+                    </a></li>
+                    <li class="list-group-item"><a href="https://www.facebook.com/andrew.vasyltsiv"><i
+                            class="fa fa-fb-square fa-lg"></i> FB
+                    </a></li>
+                  </ul>
+                </li>
 
 
-</ul>        </div><!--/.well -->
 
-      </div><!--/row-->
+                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group" id="tags">
+                        <li class="list-group-item tag-1">
+                            <a href="/tag/python.html">
+                                python
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/html.html">
+                                html
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/js.html">
+                                JS
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/dim.html">
+                                Дім
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/content-summary.html">
+                                Content-summary
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/dsl.html">
+                                dsl
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/javascript.html">
+                                JavaScript
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
 
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
       <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 Andrew V.
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="//code.jquery.com/jquery.js"></script>
 
-      <footer>
-        <address id="about">
-                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
-                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
-        </address><!-- /#about -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
 
-        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
-                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
-      </footer>
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
 
-    </div><!--/.fluid-container-->
-
-
-
-    <!-- Le javascript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/theme/js/jquery-1.7.2.min.js"></script>
-    <script src="/theme/js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>

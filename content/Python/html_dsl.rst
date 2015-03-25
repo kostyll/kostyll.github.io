@@ -1,6 +1,6 @@
 HTML dsl under python
-#####################
-
+=====================
+:slug: html-dsl-under-python
 :tags: python, html, dsl
 :date: 2014-08-28 17:00
 :category: Python
@@ -10,11 +10,17 @@ Today, after a long process of seeking for dsl under python I've found one inter
 
 I've analized this code and understood that this snippet doesn't  support working in thread and after some having a think I've realized this feature using threading module. Context information is stored in dictionary, where key-value is formed using thread name-attribute. Module threading supports naming threads with same names and a programmer must be carefull using this code, but in most cases threads are automatically named using template "MainThread,Thread-<1> .... Thread-<N>", so at most it mught be usefull for somebody :)
 
-.. code-include:: /home/andrew/workspace/msi/kostyll.github.io/content/html.py
+.. code-include:: html.py
     :lexer: python
+    :encoding: utf-8
+    :tab-width: 3
 
 There is a few examples of using it:
 
-.. code-include:: /home/andrew/workspace/msi/kostyll.github.io/content/test_html.py
+.. code-include:: test_html.py
     :lexer: python
+    :encoding: utf-8
+    :tab-width: 3
+
+
 
