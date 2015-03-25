@@ -22,7 +22,7 @@ GITHUB_URL = 'https://github.com/kostyll'
 STATIC_COMMENTS = True
 STATIC_COMMENTS_DIR = 'comments'
 
-STATIC_PATHS = []
+STATIC_PATHS = ['images',]
 
 PDF_GENERATOR = False
 PDF_STYLE_PATH = ''
