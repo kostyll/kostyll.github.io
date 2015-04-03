@@ -82,6 +82,6 @@ SITEMAP = {
 disqus_secrets = map(lambda x: x.strip(),file('disqus_secrets').readlines())
 print disqus_secrets
 
-DISQUS_SITENAME = disqus_secrets[0].split(', ')[0]
-DISQUS_SECRET_KEY = disqus_secrets[1]
-DISQUS_PUBLIC_KEY = disqus_secrets[2]
+DISQUS_SITENAME = disqus_secrets[0] # kostyllsblog
+DISQUS_SECRET_KEY = disqus_secrets[1] #
+DISQUS_PUBLIC_KEY = disqus_secrets[2] #
