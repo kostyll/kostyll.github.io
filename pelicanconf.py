@@ -9,7 +9,7 @@ SITEURL = '/'
 
 PATH = 'content'
 PLUGIN_PATHS = ['plugins/third_party/pelican-plugins/']
-PLUGINS = ['assets', 'static_comments','code_include','interlinks','pdf', 'sitemap','disqus_static']
+PLUGINS = ['assets', 'code_include','interlinks','pdf', 'sitemap','disqus_static']
 
 #THEME='themes/third_party/pelican-themes/pelican-bootstrap3'
 THEME='themes/third_party/pelican-fresh'
@@ -79,6 +79,9 @@ SITEMAP = {
 }
 }
 
-DISQUS_SITENAME = u'YOUR_SITENAME'
-DISQUS_SECRET_KEY = u'YOUR_SECRET_KEY'
-DISQUS_PUBLIC_KEY = u'YOUR_PUBLIC_KEY'
+disqus_secrets = map(lambda x: x.strip(),file('disqus_secrets').readlines())
+print disqus_secrets
+
+DISQUS_SITENAME = disqus_secrets[0].split(', ')[0]
+DISQUS_SECRET_KEY = disqus_secrets[1]
+DISQUS_PUBLIC_KEY = disqus_secrets[2]

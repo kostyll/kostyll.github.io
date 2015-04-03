@@ -47,7 +47,6 @@
                     <div class="navbar-inner">
                         <ul class="nav">
                             <li ><a href="/pages/about.html">ABOUT</a></li>
-                            <li ><a href="/pages/.html"></a></li>
                             <li ><a href="/category/ekonomika.html">Економіка</a></li>
                             <li ><a href="/category/js.html">JS</a></li>
                             <li class="active"><a href="/category/python.html">Python</a></li>
@@ -84,6 +83,8 @@
         tags:         <a href="/tag/python.html">python</a>
 
 
+        |
+        <a href="/this-is-the-first-post.html#disqus_thread">comments</a>
 
     
 </footer><!-- /.post-info -->
@@ -93,6 +94,18 @@ This blog is made using GitHub pages and a new for me static site generator name
 <p>This blog is created via this <a href="http://ntanjerome.org/blog/how-to-setup-github-user-page-with-pelican/">tutorial</a></p>
 
       </div><!-- /.entry-content -->
+      <div class="comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_identifier = "this-is-the-first-post.html";
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//localhost.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </div>
 
     </article>
   </section>
@@ -117,6 +130,15 @@ This blog is made using GitHub pages and a new for me static site generator name
         </div>
     </footer>
 
+<script type="text/javascript">
+    var disqus_shortname = 'localhost';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
 </body>

@@ -10,3 +10,6 @@
 [submodule "themes/third_party/pelican-fresh"]
 	path = themes/third_party/pelican-fresh
 	url = git@github.com:jsliang/pelican-fresh.git
+[submodule "themes/third_party/crowsfoot"]
+	path = themes/third_party/crowsfoot
+	url = git@github.com:porterjamesj/crowsfoot.git
