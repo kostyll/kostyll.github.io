@@ -69,6 +69,7 @@ git checkout -b <span class="nb">source</span>
 pip install pelican
 pip install Markdown
 pip install ghp-import
+
 git clone --recursive https://github.com/getpelican/pelican-plugins
 git clone --recursive https://github.com/getpelican/pelican-themes
 
@@ -127,6 +128,16 @@ Buttermilch is super cool.
 <div class="highlight"><pre><span></span>make html
 make serve
 </pre></div>
+</div>
+<div class="section" id="save-and-push-to-github">
+<h2>Save and push to github</h2>
+<div class="highlight"><pre><span></span>git branch gh-pages
+ghp-import output
+git checkout master
+git merge gh-pages
+git push --all
+</pre></div>
+<p>ENJOI!</p>
 </div>
 
             </div>
