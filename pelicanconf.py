@@ -9,10 +9,10 @@ SITEURL = '/'
 
 PATH = 'content'
 PLUGIN_PATHS = ['pelican-plugins/']
-PLUGINS = [] #['assets', 'code_include','interlinks','pdf', 'sitemap']
+PLUGINS = ['assets', 'code_include','interlinks','pdf', 'sitemap']
 
 #THEME='themes/third_party/pelican-themes/pelican-bootstrap3'
-THEME='pelican-themes/ops'
+THEME='pelican-themes/blue-penguin'
 
 TIMEZONE = 'Europe/Paris'
 
@@ -20,12 +20,12 @@ DEFAULT_LANG = u'en'
 
 GITHUB_URL = 'https://github.com/kostyll'
 
-STATIC_COMMENTS = True
-STATIC_COMMENTS_DIR = 'comments'
+# STATIC_COMMENTS = True
+# STATIC_COMMENTS_DIR = 'comments'
 
 STATIC_PATHS = ['images',]
 
-PDF_GENERATOR = False
+PDF_GENERATOR = True
 PDF_STYLE_PATH = ''
 PDF_STYLE = 'a4'
 
@@ -79,3 +79,6 @@ SITEMAP = {
 }
 }
 
+
+
+HOME_URL = "/"

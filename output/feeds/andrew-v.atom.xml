@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>LifeDebuger stuff - Andrew V.</title><link href="/" rel="alternate"></link><link href="/feeds/andrew-v.atom.xml" rel="self"></link><id>/</id><updated>2017-03-28T15:40:00+02:00</updated><entry><title>Hot to create blog in Pelican, hosted on github pages</title><link href="/my-super-blog.html" rel="alternate"></link><published>2017-03-28T15:20:00+02:00</published><updated>2017-03-28T15:20:00+02:00</updated><author><name>Andrew V.</name></author><id>tag:None,2017-03-28:/my-super-blog.html</id><summary type="html">&lt;p class="first last"&gt;Blog in Pelican, hosted on github pages&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;Firstly, create a github page by creating a github repository and name it USERNAME.github.io&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/USERNAME/USERNAME.github.io.git
-&lt;span class="nb"&gt;cd&lt;/span&gt; USERNAME.github.io.git
+</summary><content type="html">&lt;div class="section" id="create-repo"&gt;
+&lt;h2&gt;Create repo&lt;/h2&gt;
+&lt;p&gt;Firstly, create a github page by creating a github repository and name it USERNAME.github.io&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git clone https://github.com/USERNAME/USERNAME.github.io.git
+&lt;span class="pygments-nb"&gt;cd&lt;/span&gt; USERNAME.github.io.git
 python -m virtualenv --no-site-packages -p /usr/bin/python .env
-&lt;span class="nb"&gt;source&lt;/span&gt; .env/bin/activate
-git checkout -b &lt;span class="nb"&gt;source&lt;/span&gt;
+&lt;span class="pygments-nb"&gt;source&lt;/span&gt; .env/bin/activate
+git checkout -b &lt;span class="pygments-nb"&gt;source&lt;/span&gt;
 pip install pelican
 pip install Markdown
 pip install ghp-import
@@ -14,7 +17,8 @@ git clone --recursive https://github.com/getpelican/pelican-plugins
 git clone --recursive https://github.com/getpelican/pelican-themes
 
 pelican-quickstart
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;p&gt;Answer some questions ....
 &amp;gt; Where do you want to create your new web site? [.]
 &amp;gt; What will be the title of this web site? Buttermilch
@@ -30,12 +34,20 @@ pelican-quickstart
 &amp;gt; Do you want to upload your website using Dropbox? (y/N)
 &amp;gt; Do you want to upload your website using S3? (y/N)
 &amp;gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)&lt;/p&gt;
-&lt;p&gt;Edit pelicanconf.py&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="edit-pelicanconf-py"&gt;
+&lt;h2&gt;Edit pelicanconf.py&lt;/h2&gt;
+&lt;p&gt;configure plugins ...
+setup nessesary python packages ...&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class="section" id="create-a-markdown-post"&gt;
 &lt;h2&gt;Create a Markdown Post&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi content/test.md
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: Buttermilch is awesome
+&lt;pre class="code bash literal-block"&gt;
+vi content/test.md
+
+&lt;/pre&gt;
+&lt;pre class="code markdown literal-block"&gt;
+Title: Buttermilch is awesome
 Date: 2013-08-22 16:08
 Category: Python
 Tags: python
@@ -43,40 +55,49 @@ Author: Tony Stark
 Summary: Buttermilch is super cool.
 
 Buttermilch is super cool.
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="create-a-rst-post"&gt;
 &lt;h2&gt;Create a rst Post&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vi content/test1.rst
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="gh"&gt;My super title&lt;/span&gt;
-&lt;span class="gh"&gt;##############&lt;/span&gt;
+&lt;pre class="code bash literal-block"&gt;
+vi content/test1.rst
 
-&lt;span class="nc"&gt;:date:&lt;/span&gt; &lt;span class="nf"&gt;2010-10-03 10:20&lt;/span&gt;
-&lt;span class="nc"&gt;:modified:&lt;/span&gt; &lt;span class="nf"&gt;2010-10-04 18:40&lt;/span&gt;
-&lt;span class="nc"&gt;:tags:&lt;/span&gt; &lt;span class="nf"&gt;thats, awesome&lt;/span&gt;
-&lt;span class="nc"&gt;:category:&lt;/span&gt; &lt;span class="nf"&gt;yeah&lt;/span&gt;
-&lt;span class="nc"&gt;:slug:&lt;/span&gt; &lt;span class="nf"&gt;my-super-post&lt;/span&gt;
-&lt;span class="nc"&gt;:authors:&lt;/span&gt; &lt;span class="nf"&gt;Alexis Metaireau, Conan Doyle&lt;/span&gt;
-&lt;span class="nc"&gt;:summary:&lt;/span&gt; &lt;span class="nf"&gt;Short version for index and feeds&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="code rst literal-block"&gt;
+&lt;span class="pygments-gh"&gt;My super title&lt;/span&gt;
+&lt;span class="pygments-gh"&gt;##############&lt;/span&gt;
+
+&lt;span class="pygments-nc"&gt;:date:&lt;/span&gt; &lt;span class="pygments-nf"&gt;2010-10-03 10:20&lt;/span&gt;
+&lt;span class="pygments-nc"&gt;:modified:&lt;/span&gt; &lt;span class="pygments-nf"&gt;2010-10-04 18:40&lt;/span&gt;
+&lt;span class="pygments-nc"&gt;:tags:&lt;/span&gt; &lt;span class="pygments-nf"&gt;thats, awesome&lt;/span&gt;
+&lt;span class="pygments-nc"&gt;:category:&lt;/span&gt; &lt;span class="pygments-nf"&gt;yeah&lt;/span&gt;
+&lt;span class="pygments-nc"&gt;:slug:&lt;/span&gt; &lt;span class="pygments-nf"&gt;my-super-post&lt;/span&gt;
+&lt;span class="pygments-nc"&gt;:authors:&lt;/span&gt; &lt;span class="pygments-nf"&gt;Alexis Metaireau, Conan Doyle&lt;/span&gt;
+&lt;span class="pygments-nc"&gt;:summary:&lt;/span&gt; &lt;span class="pygments-nf"&gt;Short version for index and feeds&lt;/span&gt;
 
 Buttermilch is super cool.
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="test-your-localhost-site"&gt;
 &lt;h2&gt;Test your localhost site&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make html
+&lt;pre class="code bash literal-block"&gt;
+make html
 make serve
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="save-and-push-to-github"&gt;
 &lt;h2&gt;Save and push to github&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch gh-pages
+&lt;pre class="code bash literal-block"&gt;
+git branch gh-pages
 ghp-import output
 git checkout master
 git merge gh-pages
 git push --all
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;p&gt;ENJOI!&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="python"></category><category term="pelican"></category><category term="github"></category></entry><entry><title>Hot to setup remote git server</title><link href="/my-super-git.html" rel="alternate"></link><published>2017-03-28T15:20:00+02:00</published><updated>2017-03-28T15:40:00+02:00</updated><author><name>Andrew V.</name></author><id>tag:None,2017-03-28:/my-super-git.html</id><summary type="html">&lt;p class="first last"&gt;setup remote git server&lt;/p&gt;
@@ -86,31 +107,37 @@ git push --all
 &lt;li&gt;Get/Generate custom ssh keys.&lt;/li&gt;
 &lt;li&gt;Add information about cutom host ssh keys to ~/.ssh/config file:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;host xxx.xxx.xxx.xxx
+&lt;pre class="code sss_config_file_lang literal-block"&gt;
+host xxx.xxx.xxx.xxx
  HostName xxx.xxx.xxx.xxx
  IdentityFile ~/.ssh/XXX
  User user
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;ol class="arabic simple" start="3"&gt;
 &lt;li&gt;At server side create repo:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="pygments-nb"&gt;cd&lt;/span&gt; /
 mkdir -p /opt/git/repo.git
-&lt;span class="nb"&gt;cd&lt;/span&gt; /opt/git/repo.git
+&lt;span class="pygments-nb"&gt;cd&lt;/span&gt; /opt/git/repo.git
 git init --bare
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;ol class="arabic simple" start="4"&gt;
 &lt;li&gt;At client side make repo:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="pygments-nb"&gt;cd&lt;/span&gt; /
 mkdir -p ~/repo
-&lt;span class="nb"&gt;cd&lt;/span&gt; ~/repo
-&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;testdata&amp;quot;&lt;/span&gt; &amp;gt; testfile.txt
+&lt;span class="pygments-nb"&gt;cd&lt;/span&gt; ~/repo
+&lt;span class="pygments-nb"&gt;echo&lt;/span&gt; &lt;span class="pygments-s2"&gt;"testdata"&lt;/span&gt; &amp;gt; testfile.txt
 git add testfile.txt
-git commmit -m &lt;span class="s2"&gt;&amp;quot;initial commit&amp;quot;&lt;/span&gt;
+git commmit -m &lt;span class="pygments-s2"&gt;"initial commit"&lt;/span&gt;
 git remote add origing ssh://user@xxx.xxx.xxx.xxx:host_port/opt/git/repo.git
 git push origing master
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;
 &lt;/div&gt;
 </content><category term="git"></category><category term="ssh"></category></entry><entry><title>Summary tool under JavaScript</title><link href="/summary-tool-under-javascript.html" rel="alternate"></link><published>2014-10-31T16:02:00+01:00</published><updated>2014-10-31T16:02:00+01:00</updated><author><name>Andrew V.</name></author><id>tag:None,2014-10-31:/summary-tool-under-javascript.html</id><summary type="html">&lt;p&gt;Implementation of summarizing content in javascript&lt;/p&gt;</summary><content type="html">&lt;p&gt;This algorithm was found in &lt;a href="http://thetokenizer.com/2013/04/28/build-your-own-summary-tool/"&gt;the Internet&lt;/a&gt;
 As at this moment I try to implement add-on for Firefox, and some function I've needed was to summarize web-content.&lt;/p&gt;
