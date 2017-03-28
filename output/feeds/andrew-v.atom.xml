@@ -9,6 +9,7 @@ git checkout -b &lt;span class="nb"&gt;source&lt;/span&gt;
 pip install pelican
 pip install Markdown
 pip install ghp-import
+
 git clone --recursive https://github.com/getpelican/pelican-plugins
 git clone --recursive https://github.com/getpelican/pelican-themes
 
@@ -67,6 +68,16 @@ Buttermilch is super cool.
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make html
 make serve
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="save-and-push-to-github"&gt;
+&lt;h2&gt;Save and push to github&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch gh-pages
+ghp-import output
+git checkout master
+git merge gh-pages
+git push --all
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ENJOI!&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="python"></category><category term="pelican"></category><category term="github"></category></entry><entry><title>Hot to setup remote git server</title><link href="/my-super-git.html" rel="alternate"></link><published>2017-03-28T15:20:00+02:00</published><updated>2017-03-28T15:40:00+02:00</updated><author><name>Andrew V.</name></author><id>tag:None,2017-03-28:/my-super-git.html</id><summary type="html">&lt;p class="first last"&gt;setup remote git server&lt;/p&gt;
 </summary><content type="html">&lt;div class="section" id="id1"&gt;
