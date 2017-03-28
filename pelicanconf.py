@@ -8,11 +8,11 @@ SITENAME = u'LifeDebuger stuff'
 SITEURL = '/'
 
 PATH = 'content'
-PLUGIN_PATHS = ['plugins/third_party/pelican-plugins/']
-PLUGINS = ['assets', 'code_include','interlinks','pdf', 'sitemap','disqus_static']
+PLUGIN_PATHS = ['pelican-plugins/']
+PLUGINS = [] #['assets', 'code_include','interlinks','pdf', 'sitemap']
 
 #THEME='themes/third_party/pelican-themes/pelican-bootstrap3'
-THEME='themes/third_party/pelican-fresh'
+THEME='pelican-themes/ops'
 
 TIMEZONE = 'Europe/Paris'
 
@@ -79,9 +79,3 @@ SITEMAP = {
 }
 }
 
-disqus_secrets = map(lambda x: x.strip(),file('disqus_secrets').readlines())
-print disqus_secrets
-
-DISQUS_SITENAME = disqus_secrets[0] # kostyllsblog
-DISQUS_SECRET_KEY = disqus_secrets[1] #
-DISQUS_PUBLIC_KEY = disqus_secrets[2] #
