@@ -1,0 +1,597 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 7 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /Courier /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (http://example.com)
+>> /Border [ 0 0 0 ] /Rect [ 405.4311 329.8236 489.9111 341.8236 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/Annots [ 5 0 R ] /Contents 19 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 18 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Courier-Bold /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+8 0 obj
+<<
+/Contents 20 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 18 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+9 0 obj
+<<
+/Outlines 11 0 R /PageLabels 21 0 R /PageMode /UseNone /Pages 18 0 R /Type /Catalog
+>>
+endobj
+10 0 obj
+<<
+/Author (Andrew V.) /CreationDate (D:20170328161908-02'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20170328161908-02'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (\(unspecified\)) /Title (Hot to create blog in Pelican, hosted on github pages) /Trapped /False
+>>
+endobj
+11 0 obj
+<<
+/Count 6 /First 12 0 R /Last 17 0 R /Type /Outlines
+>>
+endobj
+12 0 obj
+<<
+/Dest [ 6 0 R /XYZ 62.69291 590.0236 0 ] /Next 13 0 R /Parent 11 0 R /Title (Create repo)
+>>
+endobj
+13 0 obj
+<<
+/Dest [ 6 0 R /XYZ 62.69291 245.8236 0 ] /Next 14 0 R /Parent 11 0 R /Prev 12 0 R /Title (Edit pelicanconf.py)
+>>
+endobj
+14 0 obj
+<<
+/Dest [ 6 0 R /XYZ 62.69291 194.8236 0 ] /Next 15 0 R /Parent 11 0 R /Prev 13 0 R /Title (Create a Markdown Post)
+>>
+endobj
+15 0 obj
+<<
+/Dest [ 8 0 R /XYZ 62.69291 679.8236 0 ] /Next 16 0 R /Parent 11 0 R /Prev 14 0 R /Title (Create a rst Post)
+>>
+endobj
+16 0 obj
+<<
+/Dest [ 8 0 R /XYZ 62.69291 448.4236 0 ] /Next 17 0 R /Parent 11 0 R /Prev 15 0 R /Title (Test your localhost site)
+>>
+endobj
+17 0 obj
+<<
+/Dest [ 8 0 R /XYZ 62.69291 370.2236 0 ] /Parent 11 0 R /Prev 16 0 R /Title (Save and push to github)
+>>
+endobj
+18 0 obj
+<<
+/Count 2 /Kids [ 6 0 R 8 0 R ] /Type /Pages
+>>
+endobj
+19 0 obj
+<<
+/Length 5618
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 717.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 28 Tm /F2 20 Tf 24 TL 13.79488 0 Td (Hot to create blog in Pelican, hosted on github) Tj T* 192.25 0 Td (pages) Tj T* -206.0449 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 692.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 48.03937 0 Td (Date:) Tj T* -48.03937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (2017-03-28 15:20) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 677.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 28.03937 0 Td (modified:) Tj T* -28.03937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (2017-03-28 15:20) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 662.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 49.14937 0 Td (tags:) Tj T* -49.14937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (python, pelican, github) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 647.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 28.02937 0 Td (category:) Tj T* -28.02937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (python) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 632.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 49.14937 0 Td (slug:) Tj T* -49.14937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (my-super-blog) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 617.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 31.37937 0 Td (Authors:) Tj T* -31.37937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Andrew V.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 602.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 25.24937 0 Td (summary:) Tj T* -25.24937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Blog in Pelican, hosted on github pages) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 569.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Create repo) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 551.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Firstly, create a github page by creating a github repository and name it USERNAME.github.io) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 373.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 168 re B*
+Q
+q
+.960784 .960784 .862745 rg
+n 0 132 12 12 re f*
+.960784 .960784 .862745 rg
+n 0 108 36 12 re f*
+.960784 .960784 .862745 rg
+n 96 96 36 12 re f*
+BT 1 0 0 1 0 146 Tm 12 TL /F3 10 Tf 0 0 0 rg (git clone https://github.com/USERNAME/USERNAME.github.io.git) Tj T* 0 .501961 0 rg (cd) Tj 0 0 0 rg ( USERNAME.github.io.git) Tj T* (python -m virtualenv --no-site-packages -p /usr/bin/python .env) Tj T* 0 .501961 0 rg (source) Tj 0 0 0 rg ( .env/bin/activate) Tj T* (git checkout -b ) Tj 0 .501961 0 rg (source) Tj 0 0 0 rg  T* (pip install pelican) Tj T* (pip install Markdown) Tj T* (pip install ghp-import) Tj T*  T* (git clone --recursive https://github.com/getpelican/pelican-plugins) Tj T* (git clone --recursive https://github.com/getpelican/pelican-themes) Tj T*  T* (pelican-quickstart) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 257.8236 cm
+q
+BT 1 0 0 1 0 98 Tm -0.015011 Tw 12 TL /F1 10 Tf 0 0 0 rg (Answer some questions .... > Where do you want to create your new web site? [.] > What will be the title of) Tj T* 0 Tw .276179 Tw (this web site? Buttermilch > Who will be the author of this web site? Tony Stark > What will be the default) Tj T* 0 Tw .420514 Tw (language of this web site? [en] > Do you want to specify a URL prefix? e.g., ) Tj 0 0 .501961 rg (http://example.com) Tj 0 0 0 rg ( \(Y/n\) n >) Tj T* 0 Tw .093988 Tw (Do you want to enable article pagination? \(Y/n\) > How many articles per page do you want? [10] > Do you) Tj T* 0 Tw .274985 Tw (want to generate a Fabfile/Makefile ... and publishing? \(Y/n\) > Do you want an auto-reload & simpleHTTP) Tj T* 0 Tw .372488 Tw (... and site development? \(Y/n\) > Do you want to upload your website using FTP? \(y/N\) > Do you want to) Tj T* 0 Tw .538876 Tw (upload your website using SSH? \(y/N\) > Do you want to upload your website using Dropbox? \(y/N\) > Do) Tj T* 0 Tw .367765 Tw (you want to upload your website using S3? \(y/N\) > Do you want to upload your website using Rackspace) Tj T* 0 Tw (Cloud Files? \(y/N\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 224.8236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Edit pelicanconf.py) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 206.8236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (configure plugins ... setup nessesary python packages ...) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 173.8236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Create a Markdown Post) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 140.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (vi content/test.md) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 83.42362 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F3 10 Tf 12 TL (Title: Buttermilch is awesome) Tj T* (Date: 2013-08-22 16:08) Tj T* (Category: Python) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+ 
+endstream
+endobj
+20 0 obj
+<<
+/Length 3558
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 691.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 72 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F3 10 Tf 12 TL (Tags: python) Tj T* (Author: Tony Stark) Tj T* (Summary: Buttermilch is super cool.) Tj T*  T* (Buttermilch is super cool.) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 658.8236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Create a rst Post) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 625.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (vi content/test1.rst) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 460.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 156 re B*
+Q
+q
+.960784 .960784 .862745 rg
+n 0 132 84 12 re f*
+.960784 .960784 .862745 rg
+n 0 120 84 12 re f*
+.960784 .960784 .862745 rg
+n 0 96 36 12 re f*
+.960784 .960784 .862745 rg
+n 42 96 96 12 re f*
+.960784 .960784 .862745 rg
+n 0 84 60 12 re f*
+.960784 .960784 .862745 rg
+n 66 84 96 12 re f*
+.960784 .960784 .862745 rg
+n 0 72 36 12 re f*
+.960784 .960784 .862745 rg
+n 42 72 84 12 re f*
+.960784 .960784 .862745 rg
+n 0 60 60 12 re f*
+.960784 .960784 .862745 rg
+n 66 60 24 12 re f*
+.960784 .960784 .862745 rg
+n 0 48 36 12 re f*
+.960784 .960784 .862745 rg
+n 42 48 78 12 re f*
+.960784 .960784 .862745 rg
+n 0 36 54 12 re f*
+.960784 .960784 .862745 rg
+n 60 36 174 12 re f*
+.960784 .960784 .862745 rg
+n 0 24 54 12 re f*
+.960784 .960784 .862745 rg
+n 60 24 198 12 re f*
+BT 1 0 0 1 0 134 Tm 12 TL /F4 10 Tf 0 0 .501961 rg (My super title) Tj /F3 10 Tf 0 0 0 rg  T* /F4 10 Tf 0 0 .501961 rg (##############) Tj /F3 10 Tf 0 0 0 rg  T*  T* /F4 10 Tf 0 0 1 rg (:date:) Tj /F3 10 Tf 0 0 0 rg ( ) Tj 0 0 1 rg (2010-10-03 10:20) Tj 0 0 0 rg  T* /F4 10 Tf 0 0 1 rg (:modified:) Tj /F3 10 Tf 0 0 0 rg ( ) Tj 0 0 1 rg (2010-10-04 18:40) Tj 0 0 0 rg  T* /F4 10 Tf 0 0 1 rg (:tags:) Tj /F3 10 Tf 0 0 0 rg ( ) Tj 0 0 1 rg (thats, awesome) Tj 0 0 0 rg  T* /F4 10 Tf 0 0 1 rg (:category:) Tj /F3 10 Tf 0 0 0 rg ( ) Tj 0 0 1 rg (yeah) Tj 0 0 0 rg  T* /F4 10 Tf 0 0 1 rg (:slug:) Tj /F3 10 Tf 0 0 0 rg ( ) Tj 0 0 1 rg (my-super-post) Tj 0 0 0 rg  T* /F4 10 Tf 0 0 1 rg (:authors:) Tj /F3 10 Tf 0 0 0 rg ( ) Tj 0 0 1 rg (Alexis Metaireau, Conan Doyle) Tj 0 0 0 rg  T* /F4 10 Tf 0 0 1 rg (:summary:) Tj /F3 10 Tf 0 0 0 rg ( ) Tj 0 0 1 rg (Short version for index and feeds) Tj 0 0 0 rg  T*  T* (Buttermilch is super cool.) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 427.4236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Test your localhost site) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 382.2236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F3 10 Tf 12 TL (make html) Tj T* (make serve) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 349.2236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Save and push to github) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 268.0236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 72 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F3 10 Tf 12 TL (git branch gh-pages) Tj T* (ghp-import output) Tj T* (git checkout master) Tj T* (git merge gh-pages) Tj T* (git push --all) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 248.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (ENJOI!) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+21 0 obj
+<<
+/Nums [ 0 22 0 R 1 23 0 R ]
+>>
+endobj
+22 0 obj
+<<
+/S /D /St 1
+>>
+endobj
+23 0 obj
+<<
+/S /D /St 2
+>>
+endobj
+xref
+0 24
+0000000000 65535 f 
+0000000073 00000 n 
+0000000134 00000 n 
+0000000241 00000 n 
+0000000353 00000 n 
+0000000458 00000 n 
+0000000628 00000 n 
+0000000851 00000 n 
+0000000961 00000 n 
+0000001166 00000 n 
+0000001271 00000 n 
+0000001591 00000 n 
+0000001665 00000 n 
+0000001777 00000 n 
+0000001910 00000 n 
+0000002046 00000 n 
+0000002177 00000 n 
+0000002315 00000 n 
+0000002439 00000 n 
+0000002505 00000 n 
+0000008175 00000 n 
+0000011785 00000 n 
+0000011835 00000 n 
+0000011869 00000 n 
+trailer
+<<
+/ID 
+[<13c941dc0ccfcbf4d95f4b312ad49cd2><13c941dc0ccfcbf4d95f4b312ad49cd2>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 10 0 R
+/Root 9 0 R
+/Size 24
+>>
+startxref
+11903
+%%EOF

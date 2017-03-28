@@ -1,78 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> LifeDebuger stuff - python </title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="wb:webmaster" content="ba29596b8c7c7ae7" /> 
-
-    <meta name="description" content="">
-    <meta name="author" content="Andrew V.">
-
-    <link href="/theme/css/fonts.css" rel="stylesheet" />
-
-    <link href="/theme/css/normalize.css" rel="stylesheet"/>
-    <link href="/theme/css/skeleton.css" rel="stylesheet"/>
-    <link href="/theme/css/github-prettify-theme.css" rel="stylesheet"/>
-    <link href="/theme/css/custom.css" rel="stylesheet"/>
-    <link href="/theme/css/pygement.css" rel="stylesheet"/>
-
-    <script src="/theme/js/jquery.min.js"></script>
-    <script src="/theme/js/run_prettify.js"></script>
-    <script src="/theme/js/site.js"></script>
+    <meta charset="utf-8" />
+    <title>LifeDebuger stuff | articles tagged "python"</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Full RSS Feed" />
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
 </head>
-<body class="code-snippets-visible">
-
-<div class="navbar-spacer"></div>
-<nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <a class="navbar-link" href="/">
-                    HOME
-                </a>
-            </li>
-                <li class="navbar-item">
-                    <a class="navbar-link" href="/pages/about.html">
-                        ABOUT
-                    </a>
-                </li>
-        </ul>
-        <div class="navbar-link">
-            <a href="/"><img src="/" class="site-icon"/></a>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="ephemeral selected"><a href="/tag/python.html">python</a></li>
+                <li><a href="">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="">LifeDebuger stuff</a></h1>
         </div>
-    </div>
-</nav>
-<div class="container">
-    <section id="content">
-        <header class="header">
-            <h2 class="blogpost-title">Articles - python</h2>
-        </header>
-        <dl>
-            <h3>python</h3>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">бер 28, 2017</h4>
 
-                <dd>
-                    <a href="/this-is-the-first-post.html">This is the first post</a>
-                </dd>
+            <article class="post">
+                <h2 class="title">
+                    <a href="/my-super-blog.html" rel="bookmark" title="Permanent Link to &quot;Hot to create blog in Pelican, hosted on github pages&quot;">Hot to create blog in Pelican, hosted on github pages</a>
+                </h2>
 
-                <dd>
-                    <a href="/my-super-blog.html">Hot to create blog in Pelican, hosted on github pages</a>
-                </dd>
-        </dl>
-    </section>
+                <div class="section" id="create-repo">
+<h2>Create repo</h2>
+<p>Firstly, create a github page by creating a github repository and name it USERNAME.github.io</p>
+<pre class="code bash literal-block">
+git clone https://github.com/USERNAME/USERNAME.github.io.git
+<span class="pygments-nb">cd</span> USERNAME.github.io.git
+python -m virtualenv --no-site-packages -p /usr/bin/python .env
+<span class="pygments-nb">source</span> .env/bin/activate
+git checkout -b <span class="pygments-nb">source</span>
+pip install pelican
+pip install Markdown
+pip install ghp-import
+
+git clone --recursive https://github.com/getpelican/pelican-plugins
+git clone --recursive https://github.com/getpelican/pelican-themes
+
+pelican-quickstart
+
+</pre>
+<p>Answer some questions ....
+&gt; Where do you want to create your new web site? [.]
+&gt; What will be the title of this web site? Buttermilch
+&gt; Who will be the author of this web site? Tony Stark
+&gt; What will be the default language of this web site? [en]
+&gt; Do you want to specify a URL prefix? e.g., <a class="reference external" href="http://example.com">http://example.com</a>   (Y/n) n
+&gt; Do you want to enable article pagination? (Y/n)
+&gt; How many articles per page do you want? [10]
+&gt; Do you want to generate a Fabfile/Makefile ... and publishing? (Y/n)
+&gt; Do you want an auto-reload &amp; simpleHTTP ... and site development? (Y/n)
+&gt; Do you want to upload your website using FTP? (y/N)
+&gt; Do you want to upload your website using SSH? (y/N)
+&gt; Do you want to upload your website using Dropbox? (y/N)
+&gt; Do you want to upload your website using S3? (y/N)
+&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)</p>
+</div>
+<div class="section" id="edit-pelicanconf-py">
+<h2>Edit pelicanconf.py</h2>
+<p>configure plugins ...
+setup nessesary python packages ...</p>
+</div>
+<div class="section" id="create-a-markdown-post">
+<h2>Create a Markdown Post</h2>
+<pre class="code bash literal-block">
+vi content/test.md
+
+</pre>
+<pre class="code markdown literal-block">
+Title: Buttermilch is awesome
+Date: 2013-08-22 16:08
+Category: Python
+Tags: python
+Author: Tony Stark
+Summary: Buttermilch is super cool.
+
+Buttermilch is super cool.
+
+</pre>
+</div>
+<div class="section" id="create-a-rst-post">
+<h2>Create a rst Post</h2>
+<pre class="code bash literal-block">
+vi content/test1.rst
+
+</pre>
+<pre class="code rst literal-block">
+<span class="pygments-gh">My super title</span>
+<span class="pygments-gh">##############</span>
+
+<span class="pygments-nc">:date:</span> <span class="pygments-nf">2010-10-03 10:20</span>
+<span class="pygments-nc">:modified:</span> <span class="pygments-nf">2010-10-04 18:40</span>
+<span class="pygments-nc">:tags:</span> <span class="pygments-nf">thats, awesome</span>
+<span class="pygments-nc">:category:</span> <span class="pygments-nf">yeah</span>
+<span class="pygments-nc">:slug:</span> <span class="pygments-nf">my-super-post</span>
+<span class="pygments-nc">:authors:</span> <span class="pygments-nf">Alexis Metaireau, Conan Doyle</span>
+<span class="pygments-nc">:summary:</span> <span class="pygments-nf">Short version for index and feeds</span>
+
+Buttermilch is super cool.
+
+</pre>
+</div>
+<div class="section" id="test-your-localhost-site">
+<h2>Test your localhost site</h2>
+<pre class="code bash literal-block">
+make html
+make serve
+
+</pre>
+</div>
+<div class="section" id="save-and-push-to-github">
+<h2>Save and push to github</h2>
+<pre class="code bash literal-block">
+git branch gh-pages
+ghp-import output
+git checkout master
+git merge gh-pages
+git push --all
+
+</pre>
+<p>ENJOI!</p>
 </div>
 
-<footer class="footer">
-    &copy <a href="/" >Andrew V.</a>. 2016
-    <br/>
-    Powered by <a href="http://getpelican.com/">pelican</a>.
-    Theme by <a href="http://github.com/liyuan-t/ops">ops</a>
-    <br/>
-</footer>
-<script>
-</script>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="/my-super-blog.html">posted at 15:20</a>
+                    &nbsp;&middot;&nbsp;<a href="/category/python.html" rel="tag">python</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="/tag/python.html" class="tags selected">python</a>
+                    &nbsp;<a href="/tag/pelican.html" class="tags">pelican</a>
+                    &nbsp;<a href="/tag/github.html" class="tags">github</a>
+                </div>
+            </article>            <h4 class="date">сер 14, 2014</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/this-is-the-first-post.html" rel="bookmark" title="Permanent Link to &quot;This is the first post&quot;">This is the first post</a>
+                </h2>
+
+                <p>I love python because it gives me powerfull language opportunities and also there is a lot of batteries for the allmost all situations in the life :)
+This blog is made using GitHub pages and a new for me static site generator named Pelican. I'll do my best to support my content and give interesting information my visitors.</p>
+<p>This blog is created via this <a href="http://ntanjerome.org/blog/how-to-setup-github-user-page-with-pelican/">tutorial</a></p>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="/this-is-the-first-post.html">posted at 16:08</a>
+                    &nbsp;&middot;&nbsp;<a href="/category/python.html" rel="tag">Python</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="/tag/python.html" class="tags selected">python</a>
+                </div>
+            </article>
+
+            <div class="clear"></div>
+            <footer>
+                <p>
+                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
+                &middot;
+                Powered by <a href="http://getpelican.com">Pelican</a>
+                &middot;
+                <a href="/feeds/all.rss.xml" rel="alternate">Rss Feed</a>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
 </body>
 </html>

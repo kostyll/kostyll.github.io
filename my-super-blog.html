@@ -1,71 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> Hot to create blog in Pelican, hosted on github pages</title>
+        <meta charset="utf-8" />
+    <title>LifeDebuger stuff | Hot to create blog in Pelican, hosted on github pages</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Full RSS Feed" />
+    <link href="/feeds/python.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Categories RSS Feed" />
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="wb:webmaster" content="ba29596b8c7c7ae7" /> 
-
-    <meta name="description" content="">
-    <meta name="author" content="Andrew V.">
-
-    <link href="/theme/css/fonts.css" rel="stylesheet" />
-
-    <link href="/theme/css/normalize.css" rel="stylesheet"/>
-    <link href="/theme/css/skeleton.css" rel="stylesheet"/>
-    <link href="/theme/css/github-prettify-theme.css" rel="stylesheet"/>
-    <link href="/theme/css/custom.css" rel="stylesheet"/>
-    <link href="/theme/css/pygement.css" rel="stylesheet"/>
-
-    <script src="/theme/js/jquery.min.js"></script>
-    <script src="/theme/js/run_prettify.js"></script>
-    <script src="/theme/js/site.js"></script>
+    <meta name="keywords" content="python,pelican,github" />
 </head>
-<body class="code-snippets-visible">
-
-<div class="navbar-spacer"></div>
-<nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <a class="navbar-link" href="/">
-                    HOME
-                </a>
-            </li>
-                <li class="navbar-item">
-                    <a class="navbar-link" href="/pages/about.html">
-                        ABOUT
-                    </a>
-                </li>
-        </ul>
-        <div class="navbar-link">
-            <a href="/"><img src="/" class="site-icon"/></a>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="">LifeDebuger stuff</a></h1>
         </div>
-    </div>
-</nav>
-<div class="container">
-    <section id="content">
-        <article>
-            <p class="article-date">
-                2017-03-28 15:20:00+02:00
-            </p>
-            <header class="header">
-                <a href="/my-super-blog.html" rel="bookmark" title="Permalink to Hot to create blog in Pelican, hosted on github pages">
-                    <h2 class="blogpost-title">
-                        Hot to create blog in Pelican, hosted on github pages
-                    </h2>
-                </a>
-            </header>
-            <div>
-                <p>Firstly, create a github page by creating a github repository and name it USERNAME.github.io</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/USERNAME/USERNAME.github.io.git
-<span class="nb">cd</span> USERNAME.github.io.git
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">бер 28, 2017</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/my-super-blog.html" rel="bookmark" title="Permanent Link to &quot;Hot to create blog in Pelican, hosted on github pages&quot;">Hot to create blog in Pelican, hosted on github pages</a>
+                </h2>
+
+                <div class="section" id="create-repo">
+<h2>Create repo</h2>
+<p>Firstly, create a github page by creating a github repository and name it USERNAME.github.io</p>
+<pre class="code bash literal-block">
+git clone https://github.com/USERNAME/USERNAME.github.io.git
+<span class="pygments-nb">cd</span> USERNAME.github.io.git
 python -m virtualenv --no-site-packages -p /usr/bin/python .env
-<span class="nb">source</span> .env/bin/activate
-git checkout -b <span class="nb">source</span>
+<span class="pygments-nb">source</span> .env/bin/activate
+git checkout -b <span class="pygments-nb">source</span>
 pip install pelican
 pip install Markdown
 pip install ghp-import
@@ -74,7 +50,8 @@ git clone --recursive https://github.com/getpelican/pelican-plugins
 git clone --recursive https://github.com/getpelican/pelican-themes
 
 pelican-quickstart
-</pre></div>
+
+</pre>
 <p>Answer some questions ....
 &gt; Where do you want to create your new web site? [.]
 &gt; What will be the title of this web site? Buttermilch
@@ -90,12 +67,20 @@ pelican-quickstart
 &gt; Do you want to upload your website using Dropbox? (y/N)
 &gt; Do you want to upload your website using S3? (y/N)
 &gt; Do you want to upload your website using Rackspace Cloud Files? (y/N)</p>
-<p>Edit pelicanconf.py</p>
+</div>
+<div class="section" id="edit-pelicanconf-py">
+<h2>Edit pelicanconf.py</h2>
+<p>configure plugins ...
+setup nessesary python packages ...</p>
+</div>
 <div class="section" id="create-a-markdown-post">
 <h2>Create a Markdown Post</h2>
-<div class="highlight"><pre><span></span>vi content/test.md
-</pre></div>
-<div class="highlight"><pre><span></span>Title: Buttermilch is awesome
+<pre class="code bash literal-block">
+vi content/test.md
+
+</pre>
+<pre class="code markdown literal-block">
+Title: Buttermilch is awesome
 Date: 2013-08-22 16:08
 Category: Python
 Tags: python
@@ -103,71 +88,74 @@ Author: Tony Stark
 Summary: Buttermilch is super cool.
 
 Buttermilch is super cool.
-</pre></div>
+
+</pre>
 </div>
 <div class="section" id="create-a-rst-post">
 <h2>Create a rst Post</h2>
-<div class="highlight"><pre><span></span>vi content/test1.rst
-</pre></div>
-<div class="highlight"><pre><span></span><span class="gh">My super title</span>
-<span class="gh">##############</span>
+<pre class="code bash literal-block">
+vi content/test1.rst
 
-<span class="nc">:date:</span> <span class="nf">2010-10-03 10:20</span>
-<span class="nc">:modified:</span> <span class="nf">2010-10-04 18:40</span>
-<span class="nc">:tags:</span> <span class="nf">thats, awesome</span>
-<span class="nc">:category:</span> <span class="nf">yeah</span>
-<span class="nc">:slug:</span> <span class="nf">my-super-post</span>
-<span class="nc">:authors:</span> <span class="nf">Alexis Metaireau, Conan Doyle</span>
-<span class="nc">:summary:</span> <span class="nf">Short version for index and feeds</span>
+</pre>
+<pre class="code rst literal-block">
+<span class="pygments-gh">My super title</span>
+<span class="pygments-gh">##############</span>
+
+<span class="pygments-nc">:date:</span> <span class="pygments-nf">2010-10-03 10:20</span>
+<span class="pygments-nc">:modified:</span> <span class="pygments-nf">2010-10-04 18:40</span>
+<span class="pygments-nc">:tags:</span> <span class="pygments-nf">thats, awesome</span>
+<span class="pygments-nc">:category:</span> <span class="pygments-nf">yeah</span>
+<span class="pygments-nc">:slug:</span> <span class="pygments-nf">my-super-post</span>
+<span class="pygments-nc">:authors:</span> <span class="pygments-nf">Alexis Metaireau, Conan Doyle</span>
+<span class="pygments-nc">:summary:</span> <span class="pygments-nf">Short version for index and feeds</span>
 
 Buttermilch is super cool.
-</pre></div>
+
+</pre>
 </div>
 <div class="section" id="test-your-localhost-site">
 <h2>Test your localhost site</h2>
-<div class="highlight"><pre><span></span>make html
+<pre class="code bash literal-block">
+make html
 make serve
-</pre></div>
+
+</pre>
 </div>
 <div class="section" id="save-and-push-to-github">
 <h2>Save and push to github</h2>
-<div class="highlight"><pre><span></span>git branch gh-pages
+<pre class="code bash literal-block">
+git branch gh-pages
 ghp-import output
 git checkout master
 git merge gh-pages
 git push --all
-</pre></div>
+
+</pre>
 <p>ENJOI!</p>
 </div>
 
-            </div>
-            <div class="article-info">
-                <hr/>
-                <div class="article-info">
-                    <span><b>Category: </b><a href="/category/python.html">python</a></span>
-                    <br/>
-                    <span><b>Publication Date: </b> вт 28 березень 2017 </span>
-                    <br/>
-                        <a class="label-default" href="/tag/python.html">python</a>
-                        <a class="label-default" href="/tag/pelican.html">pelican</a>
-                        <a class="label-default" href="/tag/github.html">github</a>
-                    <br/>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="/my-super-blog.html">posted at 15:20</a>
+                    &nbsp;&middot;&nbsp;<a href="/category/python.html" rel="tag">python</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="/tag/python.html" class="tags">python</a>
+                    &nbsp;<a href="/tag/pelican.html" class="tags">pelican</a>
+                    &nbsp;<a href="/tag/github.html" class="tags">github</a>
                 </div>
-            </div>
-        </article>
-    </section>
-        <br/><br/><br/><br/>
-
-</div>
-
-<footer class="footer">
-    &copy <a href="/" >Andrew V.</a>. 2016
-    <br/>
-    Powered by <a href="http://getpelican.com/">pelican</a>.
-    Theme by <a href="http://github.com/liyuan-t/ops">ops</a>
-    <br/>
-</footer>
-<script>
-</script>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                <p>
+                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
+                &middot;
+                Powered by <a href="http://getpelican.com">Pelican</a>
+                &middot;
+                <a href="/feeds/all.rss.xml" rel="alternate">Rss Feed</a>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
 </body>
 </html>

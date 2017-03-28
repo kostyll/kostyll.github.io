@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> LifeDebuger stuff - JS </title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="wb:webmaster" content="ba29596b8c7c7ae7" /> 
-
-    <meta name="description" content="">
-    <meta name="author" content="Andrew V.">
-
-    <link href="/theme/css/fonts.css" rel="stylesheet" />
-
-    <link href="/theme/css/normalize.css" rel="stylesheet"/>
-    <link href="/theme/css/skeleton.css" rel="stylesheet"/>
-    <link href="/theme/css/github-prettify-theme.css" rel="stylesheet"/>
-    <link href="/theme/css/custom.css" rel="stylesheet"/>
-    <link href="/theme/css/pygement.css" rel="stylesheet"/>
-
-    <script src="/theme/js/jquery.min.js"></script>
-    <script src="/theme/js/run_prettify.js"></script>
-    <script src="/theme/js/site.js"></script>
+    <meta charset="utf-8" />
+    <title>LifeDebuger stuff | articles in the "JS" category</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Full RSS Feed" />
+    <link href="/feeds/js.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Categories RSS Feed" />
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
 </head>
-<body class="code-snippets-visible">
+<body>
+    <header>
+        <nav>
+            <ul>
 
-<div class="navbar-spacer"></div>
-<nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <a class="navbar-link" href="/">
-                    HOME
-                </a>
-            </li>
-                <li class="navbar-item">
-                    <a class="navbar-link" href="/pages/about.html">
-                        ABOUT
-                    </a>
-                </li>
-        </ul>
-        <div class="navbar-link">
-            <a href="/"><img src="/" class="site-icon"/></a>
+                <li class="ephemeral selected"><a href="/category/js.html">JS</a></li>
+                <li><a href="">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="">LifeDebuger stuff</a></h1>
         </div>
-    </div>
-</nav>
-<div class="container">
-    <section id="content">
-        <header class="header">
-            <h2>JS</h2>
-        </header>
-        <dl>
-            <h3>JS</h3>
-                <dd>
-                    <a href="/summary-tool-under-javascript.html">Summary tool under JavaScript</a>
-                </dd>
-        </dl>
-    </section>
-</div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">жов 31, 2014</h4>
 
-<footer class="footer">
-    &copy <a href="/" >Andrew V.</a>. 2016
-    <br/>
-    Powered by <a href="http://getpelican.com/">pelican</a>.
-    Theme by <a href="http://github.com/liyuan-t/ops">ops</a>
-    <br/>
-</footer>
-<script>
-</script>
+            <article class="post">
+                <h2 class="title">
+                    <a href="/summary-tool-under-javascript.html" rel="bookmark" title="Permanent Link to &quot;Summary tool under JavaScript&quot;">Summary tool under JavaScript</a>
+                </h2>
+
+                <p>This algorithm was found in <a href="http://thetokenizer.com/2013/04/28/build-your-own-summary-tool/">the Internet</a>
+As at this moment I try to implement add-on for Firefox, and some function I've needed was to summarize web-content.</p>
+<p>So the main Idea of the algorithm is to build matrix of mutual sentences intersection which is calculates by counting the same words in two sections and division this count with avarage sentence length in words.</p>
+<p>Than we summarize intersactions for every sentence and with this value choise what sentence should be used in summary.</p>
+<p>This algorithm I've implemented in javascript, so the source is <a href="http://kostyll.github.io/summary.js/">here</a></p>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="/summary-tool-under-javascript.html">posted at 16:02</a>
+                    &nbsp;&middot;&nbsp;<a href="/category/js.html" rel="tag">JS</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="/tag/js.html" class="tags">JS</a>
+                    &nbsp;<a href="/tag/javascript.html" class="tags">JavaScript</a>
+                    &nbsp;<a href="/tag/content-summary.html" class="tags">Content-summary</a>
+                </div>
+            </article>
+
+            <div class="clear"></div>
+            <footer>
+                <p>
+                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
+                &middot;
+                Powered by <a href="http://getpelican.com">Pelican</a>
+                &middot;
+                <a href="/feeds/all.rss.xml" rel="alternate">Rss Feed</a>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
 </body>
 </html>

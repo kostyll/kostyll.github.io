@@ -1,125 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> Hot to setup remote git server</title>
+        <meta charset="utf-8" />
+    <title>LifeDebuger stuff | Hot to setup remote git server</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Full RSS Feed" />
+    <link href="/feeds/git.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Categories RSS Feed" />
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="wb:webmaster" content="ba29596b8c7c7ae7" /> 
-
-    <meta name="description" content="">
-    <meta name="author" content="Andrew V.">
-
-    <link href="/theme/css/fonts.css" rel="stylesheet" />
-
-    <link href="/theme/css/normalize.css" rel="stylesheet"/>
-    <link href="/theme/css/skeleton.css" rel="stylesheet"/>
-    <link href="/theme/css/github-prettify-theme.css" rel="stylesheet"/>
-    <link href="/theme/css/custom.css" rel="stylesheet"/>
-    <link href="/theme/css/pygement.css" rel="stylesheet"/>
-
-    <script src="/theme/js/jquery.min.js"></script>
-    <script src="/theme/js/run_prettify.js"></script>
-    <script src="/theme/js/site.js"></script>
+    <meta name="keywords" content="git,ssh" />
 </head>
-<body class="code-snippets-visible">
-
-<div class="navbar-spacer"></div>
-<nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <a class="navbar-link" href="/">
-                    HOME
-                </a>
-            </li>
-                <li class="navbar-item">
-                    <a class="navbar-link" href="/pages/about.html">
-                        ABOUT
-                    </a>
-                </li>
-        </ul>
-        <div class="navbar-link">
-            <a href="/"><img src="/" class="site-icon"/></a>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="">LifeDebuger stuff</a></h1>
         </div>
-    </div>
-</nav>
-<div class="container">
-    <section id="content">
-        <article>
-            <p class="article-date">
-                2017-03-28 15:20:00+02:00
-            </p>
-            <header class="header">
-                <a href="/my-super-git.html" rel="bookmark" title="Permalink to Hot to setup remote git server">
-                    <h2 class="blogpost-title">
-                        Hot to setup remote git server
-                    </h2>
-                </a>
-            </header>
-            <div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">бер 28, 2017</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/my-super-git.html" rel="bookmark" title="Permanent Link to &quot;Hot to setup remote git server&quot;">Hot to setup remote git server</a>
+                </h2>
+
                 <div class="section" id="id1">
 <h2>Hot to setup remote git server ?</h2>
 <ol class="arabic simple">
 <li>Get/Generate custom ssh keys.</li>
 <li>Add information about cutom host ssh keys to ~/.ssh/config file:</li>
 </ol>
-<div class="highlight"><pre><span></span>host xxx.xxx.xxx.xxx
+<pre class="code sss_config_file_lang literal-block">
+host xxx.xxx.xxx.xxx
  HostName xxx.xxx.xxx.xxx
  IdentityFile ~/.ssh/XXX
  User user
-</pre></div>
+
+</pre>
 <ol class="arabic simple" start="3">
 <li>At server side create repo:</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> /
+<pre class="code bash literal-block">
+<span class="pygments-nb">cd</span> /
 mkdir -p /opt/git/repo.git
-<span class="nb">cd</span> /opt/git/repo.git
+<span class="pygments-nb">cd</span> /opt/git/repo.git
 git init --bare
-</pre></div>
+
+</pre>
 <ol class="arabic simple" start="4">
 <li>At client side make repo:</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> /
+<pre class="code bash literal-block">
+<span class="pygments-nb">cd</span> /
 mkdir -p ~/repo
-<span class="nb">cd</span> ~/repo
-<span class="nb">echo</span> <span class="s2">&quot;testdata&quot;</span> &gt; testfile.txt
+<span class="pygments-nb">cd</span> ~/repo
+<span class="pygments-nb">echo</span> <span class="pygments-s2">"testdata"</span> &gt; testfile.txt
 git add testfile.txt
-git commmit -m <span class="s2">&quot;initial commit&quot;</span>
+git commmit -m <span class="pygments-s2">"initial commit"</span>
 git remote add origing ssh://user@xxx.xxx.xxx.xxx:host_port/opt/git/repo.git
 git push origing master
-</pre></div>
+
+</pre>
 </div>
 
-            </div>
-            <div class="article-info">
-                <hr/>
-                <div class="article-info">
-                    <span><b>Category: </b><a href="/category/git.html">git</a></span>
-                    <br/>
-                    <span><b>Publication Date: </b> вт 28 березень 2017 </span>
-                    <br/>
-                        <a class="label-default" href="/tag/git.html">git</a>
-                        <a class="label-default" href="/tag/ssh.html">ssh</a>
-                    <br/>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="/my-super-git.html">posted at 15:20</a>
+                    &nbsp;&middot;&nbsp;<a href="/category/git.html" rel="tag">git</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="/tag/git.html" class="tags">git</a>
+                    &nbsp;<a href="/tag/ssh.html" class="tags">ssh</a>
                 </div>
-            </div>
-        </article>
-    </section>
-        <br/><br/><br/><br/>
-
-</div>
-
-<footer class="footer">
-    &copy <a href="/" >Andrew V.</a>. 2016
-    <br/>
-    Powered by <a href="http://getpelican.com/">pelican</a>.
-    Theme by <a href="http://github.com/liyuan-t/ops">ops</a>
-    <br/>
-</footer>
-<script>
-</script>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                <p>
+                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
+                &middot;
+                Powered by <a href="http://getpelican.com">Pelican</a>
+                &middot;
+                <a href="/feeds/all.rss.xml" rel="alternate">Rss Feed</a>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
 </body>
 </html>
