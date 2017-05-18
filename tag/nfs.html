@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>LifeDebuger stuff | articles tagged "nfs"</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="LifeDebuger stuff Full RSS Feed" />
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="ephemeral selected"><a href="/tag/nfs.html">nfs</a></li>
+                <li><a href="">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="">LifeDebuger stuff</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">тра 18, 2017</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/qemu-nfs.html" rel="bookmark" title="Permanent Link to &quot;Hot to exchange data between qemu and host machine&quot;">Hot to exchange data between qemu and host machine</a>
+                </h2>
+
+                <div class="section" id="at-host-machine">
+<h2>At host machine</h2>
+<ol class="arabic simple">
+<li>install nfs-common, nfs-kernel-server</li>
+</ol>
+<pre class="code bash literal-block">
+sudo apt-get install nfs-common nfs-kernel-server
+
+</pre>
+<ol class="arabic simple" start="2">
+<li>configure nfs server (nfs dir: for example /srv/nfs)</li>
+<li>start nfs server</li>
+</ol>
+<pre class="code bash literal-block">
+sudo service nfs-server start
+
+</pre>
+<ol class="arabic simple" start="4">
+<li>start qemu machine .... with some specific options:</li>
+</ol>
+<pre class="code bash literal-block">
+qemu-system-i386 -no-reboot -kernel vmlinux-2.6.32-5-686 -hda debian_squeeze_i386_standard.qcow2 -append <span class="pygments-s2">"root=/dev/sda1 console=tty0"</span> -initrd initrd.img-2.6.32-5-686 -redir tcp:2222::22
+
+</pre>
+</div>
+<div class="section" id="at-virtual-machine">
+<h2>At virtual machine</h2>
+<pre class="code bash literal-block">
+mkdir /tmp/t
+mount <span class="pygments-m">10</span>.0.2.2:/srv/nfs /tmp/t
+ls /tmp/t
+
+</pre>
+</div>
+
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="/qemu-nfs.html">posted at 15:20</a>
+                    &nbsp;&middot;&nbsp;<a href="/category/qemu.html" rel="tag">qemu</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="/tag/nfs.html" class="tags selected">nfs</a>
+                    &nbsp;<a href="/tag/qemu.html" class="tags">qemu</a>
+                </div>
+            </article>
+
+            <div class="clear"></div>
+            <footer>
+                <p>
+                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
+                &middot;
+                Powered by <a href="http://getpelican.com">Pelican</a>
+                &middot;
+                <a href="/feeds/all.rss.xml" rel="alternate">Rss Feed</a>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>

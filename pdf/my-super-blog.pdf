@@ -59,7 +59,7 @@ endobj
 endobj
 10 0 obj
 <<
-/Author (Andrew V.) /CreationDate (D:20170328161908-02'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20170328161908-02'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+/Author (Andrew V.; Andrew V.) /CreationDate (D:20170518153956-02'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20170518153956-02'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
   /Subject (\(unspecified\)) /Title (Hot to create blog in Pelican, hosted on github pages) /Trapped /False
 >>
 endobj
@@ -569,23 +569,23 @@ xref
 0000000961 00000 n 
 0000001166 00000 n 
 0000001271 00000 n 
-0000001591 00000 n 
-0000001665 00000 n 
-0000001777 00000 n 
-0000001910 00000 n 
-0000002046 00000 n 
-0000002177 00000 n 
-0000002315 00000 n 
-0000002439 00000 n 
-0000002505 00000 n 
-0000008175 00000 n 
-0000011785 00000 n 
-0000011835 00000 n 
-0000011869 00000 n 
+0000001602 00000 n 
+0000001676 00000 n 
+0000001788 00000 n 
+0000001921 00000 n 
+0000002057 00000 n 
+0000002188 00000 n 
+0000002326 00000 n 
+0000002450 00000 n 
+0000002516 00000 n 
+0000008186 00000 n 
+0000011796 00000 n 
+0000011846 00000 n 
+0000011880 00000 n 
 trailer
 <<
 /ID 
-[<13c941dc0ccfcbf4d95f4b312ad49cd2><13c941dc0ccfcbf4d95f4b312ad49cd2>]
+[<f4cee38957fd5eea6b7e51a57ce88b8f><f4cee38957fd5eea6b7e51a57ce88b8f>]
 % ReportLab generated PDF document -- digest (http://www.reportlab.com)
 
 /Info 10 0 R
@@ -593,5 +593,5 @@ trailer
 /Size 24
 >>
 startxref
-11903
+11914
 %%EOF

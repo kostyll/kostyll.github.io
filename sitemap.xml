@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2017-03-28T16:19:08-00:00</lastmod>
+<lastmod>2017-05-18T15:39:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2017-03-28T16:19:08-00:00</lastmod>
+<lastmod>2017-05-18T15:39:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2017-03-28T16:19:08-00:00</lastmod>
+<lastmod>2017-05-18T15:39:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2017-03-28T16:19:08-00:00</lastmod>
+<lastmod>2017-05-18T15:39:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/pages/about.html</loc>
 <lastmod>2015-03-25T12:00:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/qemu-nfs.html</loc>
+<lastmod>2017-05-18T15:40:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -88,6 +95,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/category/qemu.html</loc>
+<lastmod>2017-05-18T15:40:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/pelican.html</loc>
 <lastmod>2017-03-28T15:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
@@ -95,8 +109,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/github.html</loc>
-<lastmod>2017-03-28T15:20:00+00:09</lastmod>
+<loc>/tag/git.html</loc>
+<lastmod>2017-03-28T15:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -123,8 +137,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/git.html</loc>
-<lastmod>2017-03-28T15:40:00+00:09</lastmod>
+<loc>/tag/github.html</loc>
+<lastmod>2017-03-28T15:20:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/nfs.html</loc>
+<lastmod>2017-05-18T15:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -132,6 +153,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/tag/ssh.html</loc>
 <lastmod>2017-03-28T15:40:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/qemu.html</loc>
+<lastmod>2017-05-18T15:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -145,7 +173,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/andrew-v.html</loc>
-<lastmod>2017-03-28T15:40:00+00:09</lastmod>
+<lastmod>2017-05-18T15:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

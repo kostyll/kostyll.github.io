@@ -37,7 +37,7 @@ endobj
 endobj
 7 0 obj
 <<
-/Author (Andrew V.; Andrew V.) /CreationDate (D:20170328161908-02'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20170328161908-02'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+/Author (Andrew V.; Andrew V.; Andrew V.) /CreationDate (D:20170518153956-02'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20170518153956-02'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
   /Subject (\(unspecified\)) /Title (Hot to setup remote git server) /Trapped /False
 >>
 endobj
@@ -433,16 +433,16 @@ xref
 0000000448 00000 n 
 0000000653 00000 n 
 0000000757 00000 n 
-0000001064 00000 n 
-0000001135 00000 n 
-0000001253 00000 n 
-0000001313 00000 n 
-0000006830 00000 n 
-0000006871 00000 n 
+0000001075 00000 n 
+0000001146 00000 n 
+0000001264 00000 n 
+0000001324 00000 n 
+0000006841 00000 n 
+0000006882 00000 n 
 trailer
 <<
 /ID 
-[<bbfe8e84cbf9dc6ece799dcab5d5abcf><bbfe8e84cbf9dc6ece799dcab5d5abcf>]
+[<49a430161e2eb95fc90997b96420990c><49a430161e2eb95fc90997b96420990c>]
 % ReportLab generated PDF document -- digest (http://www.reportlab.com)
 
 /Info 7 0 R
@@ -450,5 +450,5 @@ trailer
 /Size 14
 >>
 startxref
-6905
+6916
 %%EOF
